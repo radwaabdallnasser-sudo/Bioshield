@@ -1,4 +1,3 @@
-cat << 'EOF' > main.py
 import random
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import HTMLResponse
@@ -242,4 +241,3 @@ async def analyze_image(file: UploadFile = File(...)):
     </html>
     """
     return html_start + html_chart
-EOF
