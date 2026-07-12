@@ -5,22 +5,22 @@ import random
 app = FastAPI(title="BioShield Grand-Jury OS")
 
 # =========================================================================
-# 🖼️ HIGH-FIDELITY VECTOR GRAPHICS EMBEDS
+# 🖼️ HIGH-FIDELITY VECTOR GRAPHICS EMBEDS (UPDATED BIOSHIELD SYSTEM)
 # =========================================================================
 BRAND_PNG_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23dfd5ea;'>"
-    "<rect x='50' y='120' width='210' height='400' rx='20' fill='%23e2ede4' stroke='%231b5e20' stroke-width='4'/>"
-    "<rect x='295' y='80' width='210' height='450' rx='20' fill='%23fbf8eb' stroke='%232e4d32' stroke-width='5'/>"
-    "<rect x='540' y='120' width='210' height='400' rx='20' fill='%23eedffa' stroke='%234a148c' stroke-width='4'/>"
-    "<text x='400' y='260' font-family='Times New Roman, serif' font-weight='bold' font-size='32' fill='%231b5e20' text-anchor='middle'>BIOSHIELD</text>"
-    "<text x='400' y='300' font-family='Times New Roman, serif' font-size='18' fill='%23555' text-anchor='middle'>NUTRIENTS MATRIX</text>"
-    "<circle cx='155' cy='420' r='30' fill='%238d6e63'/><circle cx='400' cy='430' r='45' fill='%233e2723'/><circle cx='645' cy='420' r='30' fill='%235c3a21'/>"
-    "<text x='400' y='570' font-family='Times New Roman, serif' font-weight='bold' font-size='16' fill='%232e4d32' text-anchor='middle'>Your Soil is Healthier, Your Life is Better</text>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23f7faf7;'>"
+    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23ffffff' stroke='%23e8f6ea' stroke-width='8'/>"
+    "<rect x='100' y='100' width='600' height='400' rx='20' fill='none' stroke='%232f7d32' stroke-width='4' stroke-dasharray='10,10'/>"
+    "<circle cx='400' cy='220' r='80' fill='%23e8f6ea'/>"
+    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%232f7d32' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
+    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23224d2e' text-anchor='middle'>BioShield Innovation</text>"
+    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%233d8f45' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
+    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23666666' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
     "</svg>"
 )
 
 PLANTS_IMAGE_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23e8f5e9;'>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23e8f6ea;'>"
     "<path d='M200,380 Q160,200 200,60 Q240,200 200,380' fill='%232e7d32'/>"
     "<path d='M200,280 Q100,180 60,140 Q140,160 200,260' fill='%234caf50'/>"
     "<path d='M200,240 Q300,140 340,100 Q260,120 200,220' fill='%2381c784'/>"
@@ -39,11 +39,10 @@ SOIL_IMAGE_BASE64 = (
 )
 
 HEADER_BANNER_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' style='background:linear-gradient(90deg, %23112a14 0%25, %23271202 100%25);'>"
-    "<path d='M0,400 Q300,280 600,350 T1200,310 L1200,400 Z' fill='%233e2723'/>"
-    "<path d='M150,330 Q120,150 200,80 Q280,150 250,330' fill='%232e7d32' opacity='0.9'/>"
-    "<text x='600' y='180' font-family='Times New Roman, serif' font-weight='bold' font-size='42' fill='%23ffffff' text-anchor='middle' letter-spacing='2'>BIOSHIELD ECOSYSTEM</text>"
-    "<text x='600' y='220' font-family='Times New Roman, serif' font-size='18' fill='%23a1c7a3' text-anchor='middle'>Organic Topsoil Restoration &amp; Botanical Health Intelligence</text>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' style='background:linear-gradient(90deg, %23224d2e 0%25, %232f7d32 100%25);'>"
+    "<path d='M0,400 Q300,280 600,350 T1200,310 L1200,400 Z' fill='%23f7faf7' opacity='0.15'/>"
+    "<text x='600' y='180' font-family='Times New Roman, serif' font-weight='800' font-size='52' fill='%23ffffff' text-anchor='middle' letter-spacing='1'>BIOSHIELD NUTRIENTS</text>"
+    "<text x='600' y='230' font-family='Times New Roman, serif' font-weight='600' font-size='22' fill='%23e8f6ea' text-anchor='middle'>AI-Powered Analysis &amp; Biodegradable Solutions</text>"
     "</svg>"
 )
 
@@ -125,17 +124,33 @@ PREMIUM_CSS = """
     body, html, .navbar-brand, h1, h2, h3, h4, h5, h6, p, table, form, button, select, input {
         font-family: 'Times New Roman', Times, Baskerville, Georgia, serif !important;
     }
-    body { background-color: #f4f8f5; color: #1e293b; }
-    .nav-premium { background: linear-gradient(90deg, #051207 0%, #102e15 100%); border-bottom: 4px solid #198754; }
-    .hero-premium { background: linear-gradient(135deg, #061709 0%, #163a1c 100%); color: white; padding: 3rem 2rem; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,0.06); }
-    .card-luxury { border: none; border-radius: 20px; background: white; box-shadow: 0 8px 24px rgba(0,0,0,0.03); padding: 2.2rem; margin-bottom: 1.8rem; }
-    .graph-container { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; }
-    .chart-bar-container { height: 30px; background-color: #e2e8f0; border-radius: 15px; overflow: hidden; margin-bottom: 1rem; border: 1px solid #cbd5e1; display: flex; }
-    .chart-bar-fill { height: 100%; color: white; font-weight: bold; font-size: 0.95rem; display: flex; align-items: center; padding-left: 14px; transition: width 0.6s ease; }
-    .cure-banner-premium { background: linear-gradient(135deg, #040d05 0%, #0d2411 100%); color: #f0f7f2; border-radius: 24px; padding: 3rem; border-left: 12px solid #ffc107; }
-    .img-main { border-radius: 20px; max-height: 400px; object-fit: cover; width: 100%; box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
-    .img-thumb { border-radius: 14px; width: 100px; height: 100px; object-fit: cover; border: 3px solid #e2e8f0; background: #fff; }
-    .table-kagl { font-size: 0.9rem; }
+    body { background-color: #f7faf7; color: #224d2e; }
+    .nav-premium { background: linear-gradient(90deg, #224d2e 0%, #2f7d32 100%); border-bottom: 4px solid #3d8f45; }
+    .hero-premium { background: linear-gradient(135deg, #224d2e 0%, #2f7d32 100%); color: white; padding: 3rem 2rem; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,0.04); }
+    .card-luxury { border: none; border-radius: 20px; background: white; box-shadow: 0 8px 24px rgba(0,0,0,0.02); padding: 2.2rem; margin-bottom: 1.8rem; }
+    .graph-container { background: #ffffff; border: 1px solid #e8f6ea; border-radius: 16px; padding: 1.5rem; }
+    .chart-bar-container { height: 32px; background-color: #f7faf7; border-radius: 16px; overflow: hidden; margin-bottom: 1.2rem; border: 1px solid #e8f6ea; display: flex; }
+    .chart-bar-fill { height: 100%; color: white; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; padding-left: 14px; transition: width 0.6s ease; }
+    
+    /* Premium Floating Product Image Showcase Animation */
+    .premium-showcase-img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 20px;
+        animation: floatPremium 5s ease-in-out infinite;
+    }
+    @keyframes floatPremium {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-18px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    .cure-banner-premium { background: linear-gradient(135deg, #224d2e 0%, #173520 100%); color: #f7faf7; border-radius: 24px; padding: 3rem; border-left: 12px solid #3d8f45; }
+    .img-main { border-radius: 20px; max-height: 400px; object-fit: cover; width: 100%; box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .img-thumb { border-radius: 14px; width: 100px; height: 100px; object-fit: cover; border: 3px solid #e8f6ea; background: #fff; }
+    .table-kagl { font-size: 0.9rem; color: #224d2e; }
+    .text-muted { color: #666666 !important; }
+    .badge-premium-pill { display: inline-block; background: #e8f6ea; color: #2f7d32; padding: 8px 18px; border-radius: 30px; margin-bottom: 20px; font-weight: 600; }
 </style>
 """
 
@@ -181,7 +196,7 @@ def dynamically_analyze_plant(filename: str):
 
 @app.get("/", response_class=HTMLResponse)
 async def platform_dashboard(chat_query: str = None, chat_response: str = None, audit_results: str = None, qr_results: str = None):
-    chat_block = f'<div class="mt-3 p-3 rounded bg-white border border-info font-monospace small"><p class="mb-1 text-primary"><strong>🧑‍🌾 Match Query:</strong> {chat_query}</p><p class="mb-0 text-success"><strong>🤖 AI System Guidance:</strong> {chat_response}</p></div>' if chat_query else ""
+    chat_block = f'<div class="mt-3 p-3 rounded bg-white border border-success font-monospace small"><p class="mb-1 text-success"><strong>🧑‍🌾 Match Query:</strong> {chat_query}</p><p class="mb-0 text-dark"><strong>🤖 AI System Guidance:</strong> {chat_response}</p></div>' if chat_query else ""
     audit_block = f'<div class="mt-3 p-3 rounded bg-white border border-primary font-monospace small">{audit_results}</div>' if audit_results else ""
     qr_block = f'<div class="mt-3 p-3 rounded bg-white border border-warning font-monospace small">{qr_results}</div>' if qr_results else ""
     
@@ -200,40 +215,61 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
     <body>
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
             <div class="container d-flex justify-content-between">
-                <a class="navbar-brand fw-bold fs-3 text-success" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <span class="badge bg-success px-3 py-2 font-monospace">EGYPT NODE [2026]</span>
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                <span class="badge bg-light text-success px-3 py-2 font-monospace fw-bold">EGYPT NODE [2026]</span>
             </div>
         </nav>
 
         <div class="container">
             
             <!-- 📊 TOP OF PAGE: INTERACTIVE LAND DEGRADATION METRICS -->
-            <div class="card-luxury border-start border-4 border-danger">
-                <h3 class="fw-bold text-dark mb-2">🌍 Planetary Topsoil Structural Collapse Analysis</h3>
+            <div class="card-luxury border-start border-4 border-success">
+                <span class="badge-premium-pill">BioShield Innovation Matrix</span>
+                <h2 class="fw-bold text-dark mb-3">Smart Biodegradable Soil Nutrient System</h2>
+                
                 <p class="text-muted fs-6 mb-4">
-                    Modern chemical applications drive topsoils toward structural extinction. High synthetic overuse has degraded over <strong>one-third of all global arable lands</strong>, triggering severe food insecurity and desertification patterns.
+                    Healthy soil is the foundation of sustainable agriculture, yet millions of hectares worldwide suffer from degradation caused by nutrient depletion, poor water retention, erosion, and excessive use of chemical fertilizers. Traditional soil analysis often requires laboratory testing, specialized equipment, and long waiting times, making it inaccessible or expensive for many farmers. As a result, soil problems are frequently identified too late, leading to reduced crop yields, increased production costs, unnecessary fertilizer application, and environmental pollution. Farmers need a rapid, affordable, and intelligent solution that helps them assess soil conditions and receive personalized recommendations directly in the field.
                 </p>
                 
+                <p class="text-muted fs-6 mb-4">
+                    BioShield is an AI-powered smart agriculture platform designed to help farmers and researchers evaluate soil health quickly and efficiently. Users simply upload a photo of their soil, and the platform analyzes visible characteristics such as texture, color, moisture indicators, and surface condition using artificial intelligence. Based on the analysis, BioShield provides a Soil Health Score, identifies potential issues, recommends suitable crops, suggests personalized BioShield nutrient capsules, and offers practical soil improvement strategies. The platform also includes an AI agricultural assistant, crop and soil databases, disease information, sustainability metrics, and progress tracking, enabling users to monitor soil health over time. By combining AI-driven analysis with biodegradable soil treatment solutions, BioShield aims to support sustainable farming, improve productivity, reduce unnecessary resource use, and make soil management more accessible.
+                </p>
+                
+                <hr class="my-4 text-secondary opacity-25">
+
                 <div class="graph-container">
-                    <h6 class="fw-bold text-dark font-monospace mb-3"><i class="bi bi-bar-chart-fill text-danger me-2"></i>Global Soil Core Performance Matrix Under Synthetic Chemical Stress:</h6>
+                    <h5 class="fw-bold text-dark font-monospace mb-3"><i class="bi bi-exclamation-triangle-fill text-danger me-2"></i>Major causes of soil degradation</h5>
+                    <p class="text-muted small mb-3">Illustrative distribution of common drivers of agricultural soil degradation.</p>
                     
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">ORGANIC STRUCTURAL MATRIX BURNOUT LOSS</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-danger" style="width: 78%;">78% Burnout Degradation Matrix</div></div>
+                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">COMPACTION</label>
+                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 75%;">75% Severity Impact</div></div>
                     
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">UNAVAILABLE LOCKED PHOSPHATE FRACTION</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-warning text-dark" style="width: 64%;">64% Chemically Immobilized Assets</div></div>
+                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">NUTRIENT DEPLETION</label>
+                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 80%;">80% Severity Impact</div></div>
                     
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">RESIDUAL MICRO-BIOLOGICAL VIABILITY CAPACITY</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 15%;">15% Active Spore Ecosystem Reserves</div></div>
+                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">ORGANIC MATTER LOSS</label>
+                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 65%;">65% Severity Impact</div></div>
+
+                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">SALINITY</label>
+                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 45%;">45% Severity Impact</div></div>
+
+                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">WATER EROSION</label>
+                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 50%;">50% Severity Impact</div></div>
+                    
+                    <h5 class="fw-bold text-dark font-monospace mt-4 mb-3"><i class="bi bi-bar-chart-fill text-success me-2"></i>Bar Chart – Common Soil Challenges Affecting Crop Production</h5>
+                    <p class="text-muted small mb-3">Illustrative severity scores for common agricultural soil problems.</p>
+                    
+                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">POOR WATER RETENTION</label>
+                    <div class="chart-bar-container"><div class="chart-bar-fill" style="width: 92%; background-color: #3d8f45;">Severity: 92 (Scale 0 - 100)</div></div>
                 </div>
             </div>
 
             <div class="hero-premium text-center mb-4 shadow-sm">
-                <h1 class="display-4 fw-bold text-white">Your Soil is Healthier, Your Life is Better</h1>
+                <h1 class="display-5 fw-bold text-white">Your Soil is Healthier, Your Life is Better</h1>
                 <p class="lead max-width-800 mx-auto mt-2 text-white-50 fs-5">Integrated Analytical Compute Matrix &amp; Structural Topsoil Restoration</p>
                 <div class="row mt-4 justify-content-center">
                     <div class="col-md-11">
-                        <img src="VAR_HEADER_BANNER" class="img-main border border-success border-3" alt="BioShield Grid">
+                        <img src="VAR_HEADER_BANNER" class="img-main border border-white border-2" alt="BioShield System Interface">
                     </div>
                 </div>
             </div>
@@ -244,7 +280,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                     <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="fw-bold text-success m-0">1. AI Soil Structural Scanner</h4>
-                            <img src="VAR_SOIL_IMAGE" class="img-thumb" alt="Soil Anchor">
+                            <img src="VAR_SOIL_IMAGE" class="img-thumb" alt="Soil Capture Interface">
                         </div>
                         <p class="text-muted small mb-3">Upload field captures to process unique metadata parameters including cracking layouts, compaction indicators, and surface moisture index logs.</p>
                         <form action="/run-soil-matrix-scan" method="post" enctype="multipart/form-data">
@@ -265,10 +301,10 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-warning shadow-sm">
+                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="fw-bold text-dark m-0">🌿 Plant Canopy Vision Model</h4>
-                            <img src="VAR_PLANTS_IMAGE" class="img-thumb" alt="Plant Anchor">
+                            <img src="VAR_PLANTS_IMAGE" class="img-thumb" alt="Plant Capture Interface">
                         </div>
                         <p class="text-muted small mb-3">Upload localized crop nodes to parse absolute species groupings, origin traits, tissue watering indicators, and fungal spots.</p>
                         <form action="/run-plant-canopy-scan" method="post" enctype="multipart/form-data">
@@ -276,7 +312,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                                 <label class="form-label small fw-bold text-secondary">Select Target Crop Photo:</label>
                                 <input class="form-control form-control-sm" type="file" name="file" accept="image/*" required>
                             </div>
-                            <button class="btn btn-warning text-dark w-100 btn-sm fw-bold" type="submit">Run Canopy Infection Screen</button>
+                            <button class="btn btn-success w-100 btn-sm fw-bold" type="submit">Run Canopy Infection Screen</button>
                         </form>
                     </div>
                 </div>
@@ -285,8 +321,8 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             <!-- AUDITS AND REGISTRY KEY INTERACTIVE LINK LAYER -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-primary shadow-sm">
-                        <h4 class="fw-bold text-primary mb-2">2. Before &amp; After Audits</h4>
+                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
+                        <h4 class="fw-bold text-success mb-2">2. Before &amp; After Audits</h4>
                         <p class="text-muted small mb-3">Input an existing scan tracking code ID alongside a post-treatment capture to calculate physical regeneration rates.</p>
                         <form action="/run-audit-comparison" method="post" enctype="multipart/form-data">
                             <div class="row g-2 mb-2">
@@ -299,21 +335,21 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                                     <input type="file" name="audit_file" class="form-control form-control-sm" accept="image/*" required>
                                 </div>
                             </div>
-                            <button class="btn btn-primary w-100 btn-sm fw-bold" type="submit">Execute Regeneration Audit Linkage</button>
+                            <button class="btn btn-success w-100 btn-sm fw-bold" type="submit">Execute Regeneration Audit Linkage</button>
                         </form>
                         VAR_AUDIT_BLOCK
                     </div>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-dark shadow-sm">
+                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
                         <h4 class="fw-bold text-dark mb-2">3. Capsule QR Interaction</h4>
                         <p class="text-muted small mb-3">Scan or type the product package identifier key to pull up dynamic application rules, usage coordinates, and logs.</p>
                         <form action="/run-qr-key-lookup" method="post">
                             <div class="input-group mb-2">
                                 <span class="input-group-text font-monospace small bg-light">Package Serial Key:</span>
                                 <input type="text" name="qr_serial" class="form-control font-monospace form-control-sm" value="BS-MATRIX-GL-2026" required>
-                                <button class="btn btn-dark btn-sm font-monospace fw-bold" type="submit">Look-up Registry</button>
+                                <button class="btn btn-success btn-sm font-monospace fw-bold" type="submit">Look-up Registry</button>
                             </div>
                         </form>
                         VAR_QR_BLOCK
@@ -322,15 +358,15 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             </div>
 
             <!-- CHAT EXPERT CONSOLE -->
-            <div class="card-luxury border-top border-4 border-info shadow-sm">
-                <h4 class="fw-bold text-info mb-2">Integrated AI Agronomic Chat Assistant Sandbox</h4>
+            <div class="card-luxury border-top border-4 border-success shadow-sm">
+                <h4 class="fw-bold text-success mb-2">Integrated AI Agronomic Chat Assistant Sandbox</h4>
                 <form action="/run-chat-query" method="post">
                     <div class="input-group mb-2">
                         <select name="user_query" class="form-select form-select-sm" required>
                             <option value="" disabled selected>-- Select an Agronomic Question --</option>
                             VAR_DROPDOWN_OPTIONS
                         </select>
-                        <button class="btn btn-info text-white btn-sm fw-bold" type="submit">Query Shell</button>
+                        <button class="btn btn-success btn-sm fw-bold" type="submit">Query Shell</button>
                     </div>
                 </form>
                 VAR_CHAT_BLOCK
@@ -355,28 +391,29 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 </div>
             </div>
 
-            <!-- CURE PRODUCT ADVERTISEMENT FOOTER -->
+            <!-- CURE PRODUCT ADVERTISEMENT FOOTER WITH PREMIUM FLOATING ANIMATED PACKAGING IMAGE -->
             <div class="cure-banner-premium shadow-lg mt-4 mb-5">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-7">
-                        <h2 class="fw-bold text-warning mb-3">🌿 The Ultimate Cure: BioShield Structural Nutrients</h2>
+                        <h2 class="fw-bold text-white mb-3">🌿 Smart Biodegradable Soil Nutrient System</h2>
                         <p class="lh-base text-white-50 small">
-                            BioShield completely bypasses standard chemical side-effects by reinforcing underlying soil tissue. Formulated natively from organic assets: <strong>Banana Shells</strong> supply rich active organic Potassium (K); <strong>Eggshells</strong> deliver slow-release crystalline Calcium (Ca) matrices to halt structural collapse; <strong>Onion Extracts</strong> provide systemic protective barriers; and structured <strong>Biochar</strong> builds secure microscopic sponge channels to house biological ecosystems permanently.
+                            BioShield Nutrients combine biodegradable smart capsules, biochar technology, and AI-powered soil analysis to improve soil fertility, increase water retention, and promote sustainable crop production. Our approach completely replaces standard chemical side-effects by reinforcing underlying soil tissue. Formulated natively from organic assets: <strong>Banana Shells</strong> supply rich active organic Potassium (K); <strong>Eggshells</strong> deliver slow-release crystalline Calcium (Ca) matrices to halt structural collapse; <strong>Onion Extracts</strong> provide systemic protective barriers; and structured <strong>Biochar</strong> builds secure microscopic sponge channels to house biological ecosystems permanently.
                         </p>
                         <h5 class="text-success fw-bold mt-4">The Salicylic Acid Structural Shield Asset</h5>
                         <p class="text-white-50 small mb-4">
                             By triggering Systemic Acquired Resistance (SAR) within botanical rows, Salicylic Acid hardens vascular cellular lines to shield plant complexes against severe blights before infections lock in.
                         </p>
-                        <div class="p-3 rounded bg-white bg-opacity-10 border border-warning text-warning">
+                        <div class="p-3 rounded bg-white bg-opacity-10 border border-success text-white">
                             <h6 class="fw-bold mb-1"><i class="bi bi-envelope-check-fill me-2"></i>Secure Enterprise Ordering Workdesk:</h6>
-                            <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Enterprise%20Order%20Inquiry" class="btn btn-warning btn-sm fw-bold px-3 mt-2"><i class="bi bi-send-fill me-1"></i> Request Supply Chain Allocations</a>
+                            <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Enterprise%20Order%20Inquiry" class="btn btn-success btn-sm fw-bold px-3 mt-2"><i class="bi bi-send-fill me-1"></i> Request Supply Chain Allocations</a>
                         </div>
                     </div>
                     <div class="col-md-5 text-center">
-                        <div class="p-3 bg-white rounded-4 shadow-lg">
-                            <img src="VAR_BRAND_PNG" class="img-fluid rounded-4" alt="BioShield Packaging Grid">
+                        <div class="p-2 bg-white rounded-4 shadow-lg overflow-hidden">
+                            <!-- Premium Embedded Product Vector Graphics Image Asset with Floating Keyframe Styling -->
+                            <img src="VAR_BRAND_PNG" class="premium-showcase-img img-fluid" alt="BioShield Nutrients Premium Packaging Layer">
                         </div>
-                        <p class="text-warning fw-bold mt-3 mb-0 fs-5">✨ Your Soil is Healthier, Your Life is Better ✨</p>
+                        <p class="text-white fw-bold mt-3 mb-0 fs-5">✨ Your Soil is Healthier, Your Life is Better ✨</p>
                     </div>
                 </div>
             </div>
@@ -423,7 +460,7 @@ async def run_audit_comparison_route(audit_id: str = Form(...), audit_file: Uplo
     random.seed(len(audit_file.filename) + 124)
     improvement = random.randint(25, 45)
     results = f"""
-    <h6 class="fw-bold text-primary mb-2"><i class="bi bi-check-circle-fill me-1"></i> Audit Matrix Core Link Established for Token ID {audit_id}</h6>
+    <h6 class="fw-bold text-success mb-2"><i class="bi bi-check-circle-fill me-1"></i> Audit Matrix Core Link Established for Token ID {audit_id}</h6>
     <ul class="mb-0 text-dark list-unstyled">
         <li><strong>Artifact Parsed:</strong> {audit_file.filename} processed successfully.</li>
         <li><strong>Physical Regeneration Rate:</strong> <span class="text-success fw-bold">+{improvement}% Expansion</span> in stable biological porous cohesion channels.</li>
@@ -440,8 +477,8 @@ async def run_plant_canopy_scan_endpoint(file: UploadFile = File(...)):
     <head><title>Plant Vision Diagnostics Output</title>{PREMIUM_CSS}</head>
     <body>
         <div class="container py-5">
-            <a href="/" class="btn btn-outline-dark btn-sm mb-4">← Back to Terminal Dashboard</a>
-            <div class="card-luxury border-start border-4 border-warning">
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Back to Terminal Dashboard</a>
+            <div class="card-luxury border-start border-4 border-success">
                 <h3 class="fw-bold text-dark mb-3">Plant Vision Diagnostic Profile</h3>
                 <p class="text-muted small font-monospace">Uploaded Canopy Image: <strong>{file.filename}</strong></p>
                 <div class="table-responsive">
@@ -474,11 +511,11 @@ async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: Uploa
     <head><title>AI Soil Matrix Diagnosis Output</title>{PREMIUM_CSS}</head>
     <body>
         <div class="container py-5">
-            <a href="/" class="btn btn-outline-dark btn-sm mb-4">← Return to Terminal Dashboard</a>
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
             
             <div class="card-luxury border-start border-4 border-success shadow-sm">
                 <h3 class="fw-bold text-dark mb-1">Computer Vision Feature Extraction Matrix</h3>
-                <p class="text-muted small mb-4">Analyzed Resource Image Artifact: <span class="font-monospace text-primary fw-bold">{file.filename}</span></p>
+                <p class="text-muted small mb-4">Analyzed Resource Image Artifact: <span class="font-monospace text-success fw-bold">{file.filename}</span></p>
                 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped font-monospace small shadow-sm">
@@ -496,8 +533,8 @@ async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: Uploa
                 </div>
             </div>
             
-            <div class="card-luxury bg-info bg-opacity-10 border border-info shadow-sm">
-                <h5 class="fw-bold text-info mb-1"><i class="bi bi-brightness-high-fill me-2"></i>Weather-Integrated Application Safety Threshold</h5>
+            <div class="card-luxury bg-success bg-opacity-10 border border-success shadow-sm">
+                <h5 class="fw-bold text-success mb-1"><i class="bi bi-brightness-high-fill me-2"></i>Weather-Integrated Application Safety Threshold</h5>
                 <p class="small text-dark font-monospace mt-2 mb-0">{weather_notice}</p>
             </div>
         </div>
