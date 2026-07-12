@@ -1,7 +1,7 @@
-# Image Reference: object:image{} Morel name=image_a07f21.png
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import HTMLResponse
 import random
+import uvicorn
 
 app = FastAPI(title="BioShield Grand-Jury OS")
 
@@ -665,3 +665,6 @@ async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: Uploa
     </body>
     </html>
     """
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
