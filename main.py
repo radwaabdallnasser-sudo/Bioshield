@@ -8,16 +8,16 @@ app = FastAPI(title="BioShield Grand-Jury OS")
 # 🖼️ HIGH-FIDELITY VECTOR GRAPHICS EMBEDS (UPDATED BIOSHIELD SYSTEM)
 # =========================================================================
 BRAND_PNG_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23f7faf7;'>"
-    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23ffffff' stroke='%23e8f6ea' stroke-width='8'/>"
-    "<rect x='100' y='100' width='600' height='400' rx='20' fill='none' stroke='%232f7d32' stroke-width='4' stroke-dasharray='10,10'/>"
-    "<circle cx='400' cy='220' r='80' fill='%23e8f6ea'/>"
-    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%232f7d32' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
-    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23224d2e' text-anchor='middle'>BioShield Innovation</text>"
-    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%233d8f45' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
-    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23666666' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23052419;'>"
+    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23073324' stroke='%230f4633' stroke-width='8'/>"
+    "<circle cx='400' cy='220' r='80' fill='%230c4430'/>"
+    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%2334d399' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
+    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23e2e8f0' text-anchor='middle'>BioShield Innovation</text>"
+    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%2334d399' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
+    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23a7f3d0' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
     "</svg>"
 )
+
 PLANTS_IMAGE_BASE64 = (
     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23073324;'>"
     "<path d='M200,380 Q160,200 200,60 Q240,200 200,380' fill='%23041a12'/>"
@@ -39,31 +39,23 @@ SOIL_IMAGE_BASE64 = (
 
 HEADER_BANNER_BASE64 = (
     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500' style='background:%235bfcd2;'>"
-    "<!-- LEFT SIDE: Stacked organic food items from image_9254bf.jpg -->"
     "<g transform='translate(120, 240) scale(1.1)'>"
-    "  <!-- Pumpkin -->"
     "  <ellipse cx='0' cy='-110' rx='35' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='2'/>"
     "  <ellipse cx='0' cy='-110' rx='20' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='1.5'/>"
     "  <path d='M-5,-135 C-5,-145 5,-145 5,-135 Z' fill='%2350963e'/>"
-    "  <!-- Corn -->"
     "  <ellipse cx='-10' cy='-50' rx='18' ry='28' fill='%23ffd438' transform='rotate(-20, -10, -50)'/>"
     "  <path d='M-25,-35 Q-15,-70 -2,-75 Q-10,-40 -25,-35' fill='%237cb342'/>"
-    "  <path d='M5,-32 Q5,-65 -8,-72 Q2,-45 5,-32' fill='%239ccc65'/>"
-    "  <!-- Tomatoes -->"
+    "  <path d='M5,-32 Q5,-65 -8,-72 Q2,-45 5,-32' fill='%9ccc65'/>"
     "  <circle cx='0' cy='10' r='16' fill='%23e53935'/>"
     "  <circle cx='14' cy='22' r='14' fill='%23c62828'/>"
     "  <path d='M0,-2 L4,6 L-4,6 Z' fill='%2350963e' transform='translate(0, -2)'/>"
     "  <path d='M0,-2 L4,6 L-4,6 Z' fill='%2350963e' transform='translate(14, 10)'/>"
-    "  <!-- Eggplant -->"
     "  <path d='M-15,60 Q-25,90 5,100 Q30,105 25,75 Q20,50 -5,55 Z' fill='%236a1b9a' transform='rotate(-15, 0, 75)'/>"
     "  <path d='M-12,52 Q-5,48 2,54 L-5,62 Z' fill='%234caf50' transform='rotate(-15, 0, 75)'/>"
     "</g>"
-    "<!-- MAIN TYPOGRAPHY LOGO MARK WITH VIBRANT MATCHED PLAYFUL HUED PATHS -->"
     "<g transform='translate(210, 160)'>"
-    "  <!-- Water Wave Base Highlight line from design -->"
     "  <path d='M 10,185 Q 60,165 110,185 T 210,185 T 310,185' fill='none' stroke='%2342a5f5' stroke-width='14' stroke-linecap='round' opacity='0.75'/>"
     "  <path d='M 15,195 Q 65,175 115,195 T 215,195 T 315,195' fill='none' stroke='%2326a69a' stroke-width='10' stroke-linecap='round' opacity='0.75'/>"
-    "  <!-- BioShield Styled Playful Multi-Color Custom Text Layout -->"
     "  <text x='15' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='900' font-size='175' fill='%231b5e20' letter-spacing='-6'>B</text>"
     "  <text x='135' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='140' fill='%234caf50' letter-spacing='-4'>i</text>"
     "  <text x='170' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='145' fill='%2366bb6a' letter-spacing='-4'>o</text>"
@@ -74,10 +66,8 @@ HEADER_BANNER_BASE64 = (
     "  <text x='555' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='140' fill='%234db6ac' letter-spacing='-4'>l</text>"
     "  <text x='595' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='900' font-size='160' fill='%2326a69a' letter-spacing='-6'>d</text>"
     "</g>"
-    "<!-- RIGHT SIDE: Secondary text content blocks inside image_9254bf.jpg -->"
     "<text x='520' y='160' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'>rapid, convenient, and efficient nutrients</text>"
     "<text x='840' y='210' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'>residue check</text>"
-    "<!-- Leafy branch on right edge matching image_9254bf.jpg -->"
     "<g transform='translate(950, 180) scale(1.3)'>"
     "  <path d='M0,100 Q40,40 80,0' fill='none' stroke='%234caf50' stroke-width='6' stroke-linecap='round'/>"
     "  <path d='M25,70 Q0,50 -10,55 Q5,75 25,70' fill='%2381c784'/>"
@@ -85,9 +75,8 @@ HEADER_BANNER_BASE64 = (
     "  <path d='M58,28 Q40,5 30,5 Q45,25 58,28' fill='%2381c784'/>"
     "  <path d='M32,75 Q60,65 65,75 Q45,85 32,75' fill='%2366bb6a'/>"
     "  <path d='M48,52 Q75,45 80,55 Q60,62 48,52' fill='%2366bb6a'/>"
-    "  <path d='M62,30 Q90,25 92,35 Q75,40 62,30' fill='%2366bb6a'/>"
+    "  <path d='M62,30 Q90,25 92,35 Q75,40 62,30' fill='%2362align'/>"
     "</g>"
-    "<!-- BOTTOM PROMINENT SUBHEADER TEXT CAPTION -->"
     "<text x='600' y='440' font-family='Impact, Arial Black, sans-serif' font-weight='900' font-size='42' fill='%23111111' text-anchor='middle' letter-spacing='1.5'>CHECK YOUR SOIL, CHECK FOR SAFETY</text>"
     "</svg>"
 )
@@ -472,19 +461,14 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         <p class="text-white-50 small mb-4">
                             By triggering Systemic Acquired Resistance (SAR) within botanical rows, Salicylic Acid hardens vascular cellular lines to shield plant complexes against severe blights before infections lock in.
                         </p>
-                       <div style="padding: 1rem; border-radius: 0.5rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #198754; color: white;">
-        <h6 style="font-weight: bold; margin-bottom: 0.5rem;">Secure Enterprise Ordering Workdesk:</h6>
-        <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Enterprise%20Order%20Inquiry" 
-           style="background-color: #198754; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 0.25rem; font-weight: bold; display: inline-block;">
-           Request Supply Chain Allocations
-        </a>
-    </div>
-    """, 
-    unsafe_allow_html=True
-)
+                        <div class="p-3 rounded bg-white bg-opacity-10 border border-success text-white">
+                            <h6 class="fw-bold mb-1"><i class="bi bi-envelope-check-fill me-2"></i>Secure Enterprise Ordering Workdesk:</h6>
+                            <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Enterprise%20Order%20Inquiry" class="btn btn-success btn-sm fw-bold px-3 mt-2"><i class="bi bi-send-fill me-1"></i> Request Supply Chain Allocations</a>
+                        </div>
+                    </div>
                     <div class="col-md-5 text-center">
                         <div class="p-2 bg-dark rounded-4 shadow-lg overflow-hidden border border-success">
-                           st.image(r"C:\Users\m\Downloads\brand.png", caption="BioShield Nutrients Premium Packaging Layer")
+                            <img src="VAR_BRAND_PNG" class="premium-showcase-img img-fluid" alt="BioShield Nutrients Premium Packaging Layer">
                         </div>
                         <p class="text-white fw-bold mt-3 mb-0 fs-5">✨ Your Soil is Healthier, Your Life is Better ✨</p>
                     </div>
@@ -550,19 +534,21 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
     </html>
     """
 
-    rendered = html_template \
-        .replace("VAR_PREMIUM_CSS", PREMIUM_CSS) \
-        .replace("VAR_HEADER_BANNER", HEADER_BANNER_BASE64) \
-        .replace("VAR_SOIL_IMAGE", SOIL_IMAGE_BASE64) \
-        .replace("VAR_PLANTS_IMAGE", PLANTS_IMAGE_BASE64) \
-        .replace("VAR_BRAND_PNG", BRAND_PNG_BASE64) \
-        .replace("VAR_AUDIT_BLOCK", audit_block) \
-        .replace("VAR_QR_BLOCK", qr_block) \
-        .replace("VAR_DROPDOWN_OPTIONS", dropdown_options) \
-        .replace("VAR_CHAT_BLOCK", chat_block) \
-        .replace("VAR_S_ROWS", s_rows) \
-        .replace("VAR_C_ROWS", c_rows) \
+    rendered = (
+        html_template
+        .replace("VAR_PREMIUM_CSS", PREMIUM_CSS)
+        .replace("VAR_HEADER_BANNER", HEADER_BANNER_BASE64)
+        .replace("VAR_SOIL_IMAGE", SOIL_IMAGE_BASE64)
+        .replace("VAR_PLANTS_IMAGE", PLANTS_IMAGE_BASE64)
+        .replace("VAR_BRAND_PNG", BRAND_PNG_BASE64)
+        .replace("VAR_AUDIT_BLOCK", audit_block)
+        .replace("VAR_QR_BLOCK", qr_block)
+        .replace("VAR_DROPDOWN_OPTIONS", dropdown_options)
+        .replace("VAR_CHAT_BLOCK", chat_block)
+        .replace("VAR_S_ROWS", s_rows)
+        .replace("VAR_C_ROWS", c_rows)
         .replace("VAR_N_ROWS", n_rows)
+    )
 
     return HTMLResponse(content=rendered)
 
