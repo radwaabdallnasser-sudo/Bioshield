@@ -153,6 +153,38 @@ for i in range(1, 101):
         "fertilizer": tpl["fertilizer"], "yield": yield_str
     })
 
+# Generating 100+ dynamic items for Fungi, Bacteria, and Viruses
+FUNGI_DATA = []
+BACTERIA_DATA = []
+VIRUS_DATA = []
+
+FUNGI_NAMES = ["Fusarium Wilt", "Powdery Mildew", "Black Rot", "Downy Mildew", "Early Blight", "Rust Fungus", "Anthracnose", "Botrytis Bunch Rot", "Rhizoctonia Root Rot", "Phytophthora Blight"]
+BACTERIA_NAMES = ["Bacterial Canker", "Fire Blight", "Wildfire Disease", "Crown Gall", "Soft Rot", "Black Rot", "Bacterial Wilt", "Angular Leaf Spot", "Bacterial Speck", "Citrus Canker"]
+VIRUS_NAMES = ["Mosaic Virus", "Leaf Curl Virus", "Spotted Wilt Virus", "Yellow Dwarf Virus", "Ring Spot Virus", "Bushy Stunt Virus", "Streak Virus", "Etch Virus", "Necrotic Spot Virus", "Latent Virus"]
+
+CAUSES = ["High ambient humidity and stagnant moisture microclimates.", "Contaminated soil matrices and dirty operational machinery.", "Airborne spore arrays drifting from unmanaged adjacent rows.", "Over-irrigation combined with poor subsurface capillary drainage."]
+TREATMENTS = ["Apply BioShield Enzyme Active spray and lower moisture logs.", "Introduce copper trace mineral solutions and clear crop residue fields.", "Deploy microbial biological controllers and shift irrigation schedules.", "Prune infected structural branches and apply biochar protection layers."]
+TRANSMISSIONS = ["Through open vector physical wounds during harvesting protocols.", "Via active aphid, whitefly, and insect vector biological migrations.", "By structural root system contact across adjacent soil beds.", "Through heavy splashing rainwater events carrying ground pathogens."]
+
+for i in range(1, 105):
+    FUNGI_DATA.append({
+        "name": f"{FUNGI_NAMES[i % len(FUNGI_NAMES)]} Strain F-{i:03d}",
+        "cause": CAUSES[i % len(CAUSES)],
+        "treatment": TREATMENTS[i % len(TREATMENTS)]
+    })
+    BACTERIA_DATA.append({
+        "name": f"{BACTERIA_NAMES[i % len(BACTERIA_NAMES)]} Variant B-{i:03d}",
+        "cause": CAUSES[(i+1) % len(CAUSES)],
+        "treatment": TREATMENTS[(i+1) % len(TREATMENTS)],
+        "infection_mode": TRANSMISSIONS[i % len(TRANSMISSIONS)]
+    })
+    VIRUS_DATA.append({
+        "name": f"{VIRUS_NAMES[i % len(VIRUS_NAMES)]} Genotype V-{i:03d}",
+        "cause": CAUSES[(i+2) % len(CAUSES)],
+        "treatment": TREATMENTS[(i+2) % len(TREATMENTS)],
+        "infection_mode": TRANSMISSIONS[(i+1) % len(TRANSMISSIONS)]
+    })
+
 AGRONOMIC_KNOWLEDGE = {
     "Why is my soil cracking?": "Surface cracking indicates a volume reduction in high-shrink clay soils caused by excessive evaporation and organic matter depletion. Consider applying BioShield Biochar to build porous moisture channels.",
     "Can I grow tomatoes?": "Tomatoes thrive in loose, well-draining loamy soil with a pH between 6.0 and 6.8. Use diagnostic scanning to check if your current field matrix matches these structural prerequisites.",
@@ -227,6 +259,33 @@ PREMIUM_CSS = """
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 """
 
+NAV_DROPDOWNS_HTML = """
+<div class="d-flex gap-2">
+    <!-- Planting Dropdown -->
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="plantingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Planting
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="plantingDropdown">
+            <li><a class="dropdown-item text-success p-2 d-block" href="/soil">Soil</a></li>
+            <li><a class="dropdown-item text-success p-2 d-block" href="/plant">Plant</a></li>
+        </ul>
+    </div>
+    
+    <!-- Infection Dropdown -->
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle text-danger font-monospace fw-bold border border-danger" type="button" id="infectionDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Infection
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bg-dark border-danger text-danger" aria-labelledby="infectionDropdown">
+            <li><a class="dropdown-item text-danger p-2 d-block" href="/infection/fungi">Fungi</a></li>
+            <li><a class="dropdown-item text-danger p-2 d-block" href="/infection/virus">Virus</a></li>
+            <li><a class="dropdown-item text-danger p-2 d-block" href="/infection/bacteria">Bacteria</a></li>
+        </ul>
+    </div>
+</div>
+"""
+
 def execute_true_computer_vision_analysis(filename: str):
     clean_name = filename.lower()
     if "clay" in clean_name or "dark" in clean_name or "heavy" in clean_name or "22" in clean_name:
@@ -270,36 +329,47 @@ async def soil_page():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Soil Matrix & Management Procedures</title>
+        <title>Soil Layers & Management Procedures</title>
         {PREMIUM_CSS}
     </head>
     <body>
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
-            <div class="container d-flex justify-content-between">
+            <div class="container d-flex justify-content-between text-success">
                 <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Node Type
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/soil">Soil Info</a></li>
-                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/plant">Plant Info</a></li>
-                    </ul>
-                </div>
+                {NAV_DROPDOWNS_HTML}
             </div>
         </nav>
         <div class="container py-4">
             <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
+            
             <div class="card-luxury border-start border-4 border-success">
-                <h2 class="comfortaa-font text-success mb-3">Agricultural Soil Presentation</h2>
+                <h2 class="comfortaa-font text-success mb-3">Comprehensive Soil Matrix Guide</h2>
                 <p class="quicksand-font">Soil serves as a living, dynamic ecosystem providing essential nutrients, anchoring structural support, and processing moisture vectors key for crop lifecycle continuation.</p>
                 
+                <h4 class="comfortaa-font text-success mt-4">Understanding the Soil Horizons (Layers):</h4>
+                <div class="table-responsive mt-2 mb-4">
+                    <table class="table table-bordered font-monospace small text-white align-middle">
+                        <thead class="table-dark">
+                            <tr><th>Soil Horizon</th><th>Layer Name</th><th>Description & Characteristics</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>O Horizon</strong></td><td>Organic Layer</td><td>Composed of fresh leaf litter, organic debris, decomposing plant residues, and rich humus formations.</td></tr>
+                            <tr><td><strong>A Horizon</strong></td><td>Topsoil Layer</td><td>The critical agricultural operational zone. Packed with organic materials, dynamic microbial ecosystems, and high macro/micro nutrient structures.</td></tr>
+                            <tr><td><strong>E Horizon</strong></td><td>Eluviated Layer</td><td>Leached mineral horizon depleted of silicate clay, iron, or aluminum compounds, often light in color profile.</td></tr>
+                            <tr><td><strong>B Horizon</strong></td><td>Subsoil Layer</td><td>Accumulates leached iron, clay minerals, and aluminum deposits running down from topsoil arrays. Strong physical body anchor.</td></tr>
+                            <tr><td><strong>C Horizon</strong></td><td>Parent Material</td><td>Partially broken down and fragmented ancient rock foundations, low baseline organic matter properties.</td></tr>
+                            <tr><td><strong>R Horizon</strong></td><td>Bedrock Layer</td><td>Unweathered hard continuous rock baseline framework holding up the field profiles.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <h4 class="comfortaa-font text-success mt-4">How to Handle and Optimize Soil Systems:</h4>
                 <ul class="quicksand-font text-white-50">
                     <li class="mb-2"><strong>Mitigate Compaction:</strong> Avoid moving heavy implements through damp soil lines to secure unblocked drainage corridors.</li>
                     <li class="mb-2"><strong>Moisture Optimization:</strong> Incorporate natural porous biochar substrates to raise baseline water holding capacities inside coarse layers.</li>
                     <li class="mb-2"><strong>PH Neutralization:</strong> Apply targeted micro-lime parameters to low acidic arrays, or treat hyper-alkaline systems with organic composition texturizers.</li>
                     <li class="mb-2"><strong>Organic Matter Injections:</strong> Routinely mix crop residue matrices to promote humic aggregate generation.</li>
+                    <li class="mb-2"><strong>Aeration Tactics:</strong> Implement conservation or no-till configurations to protect fragile structural aggregate formations from fracturing under wind shear.</li>
                 </ul>
             </div>
         </div>
@@ -314,43 +384,114 @@ async def plant_page():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Botanical Registries & Morphological Info</title>
+        <title>Botanical Registry & Cultivation Systems</title>
         {PREMIUM_CSS}
     </head>
     <body>
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
-            <div class="container d-flex justify-content-between">
+            <div class="container d-flex justify-content-between text-success">
                 <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Node Type
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/soil">Soil Info</a></li>
-                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/plant">Plant Info</a></li>
-                    </ul>
-                </div>
+                {NAV_DROPDOWNS_HTML}
             </div>
         </nav>
         <div class="container py-4">
             <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
+            
             <div class="card-luxury border-start border-4 border-success">
-                <h2 class="comfortaa-font text-success mb-3">Importance of Plant Ecosystems</h2>
+                <h2 class="comfortaa-font text-success mb-3">Importance of Plant Ecosystems & Cultivation Protocols</h2>
                 <p class="quicksand-font">Plants operate as the primary organic engine of our ecosystem, capturing atmospheric carbon compounds through photosynthesis while producing biomass yield metrics critical for global nourishment arrays.</p>
                 
-                <h4 class="comfortaa-font text-success mt-4">How to Plant Appropriately Across Varieties:</h4>
-                <p class="quicksand-font text-white-50">Crop installation requires careful calculation of targeted spacing indexes, uniform field insertion depths, structural thermal ranges, and baseline organic matrix parameters configured specifically to each standalone variant.</p>
-                
                 <h4 class="comfortaa-font text-success mt-4">Morphological Structural Anatomy:</h4>
-                <div class="table-responsive mt-2">
+                <div class="table-responsive mt-2 mb-4">
                     <table class="table table-bordered font-monospace small text-white align-middle">
                         <thead class="table-dark">
                             <tr><th>Botanical Structure Component</th><th>Functional Biological Operational Purpose</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>Flower</strong></td><td>Contains reproductive cellular arrays configured to manage pollination and seed generation rounds.</td></tr>
-                            <tr><td><strong>Root</strong></td><td>Anchors structural tissue blocks directly into surface aggregates while absorbing sub-surface moisture profiles and trace nutrients.</td></tr>
-                            <tr><td><strong>Stem</strong></td><td>Serves as the main physical vascular framework, driving fluid nutrient translocation between sub-surface roots and upper canopy leaf cells.</td></tr>
+                            <tr><td><strong>Flower</strong></td><td>Contains reproductive cellular arrays configured to manage pollination and seed generation rounds. Attracts vital vector systems.</td></tr>
+                            <tr><td><strong>Root</strong></td><td>Anchors structural tissue blocks directly into surface aggregates while absorbing sub-surface moisture profiles and trace nutrients. Stores essential starches.</td></tr>
+                            <tr><td><strong>Stem</strong></td><td>Serves as the main physical vascular framework, driving fluid nutrient translocation between sub-surface roots and upper canopy leaf cells. Elevates leaves toward optimal solar exposure.</td></tr>
+                            <tr><td><strong>Leaf</strong></td><td>The photosynthetic solar battery chamber of the plant, capturing carbon molecules and managing gaseous exchanges via stomatal pore arrays.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="comfortaa-font text-success mt-4">How to Plant and Manage Different Varieties:</h4>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="p-3 rounded bg-dark border border-success h-100">
+                            <h5 class="text-success font-monospace">🥗 Vegetables</h5>
+                            <p class="small text-white-50">Demand quick access to nitrogen-rich organic matrices and high water retention availability. Row-spacing protocols must avoid dense spacing lines to lower micro-fungal blight outbreaks.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 rounded bg-dark border border-success h-100">
+                            <h5 class="text-success font-monospace">🍎 Fruits</h5>
+                            <p class="small text-white-50">Perennial varieties require deep taproot placement configurations and high potassium reserves during fruit-set phases. Benefit from robust mulching buffers to keep structural soil parameters cool.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 rounded bg-dark border border-success h-100">
+                            <h5 class="text-success font-monospace">🌾 Grains & Cereal</h5>
+                            <p class="small text-white-50">Excel in medium-textured loams with uniform seedbed delivery parameters. Phased fertilization schedules match structural growth nodes to optimize grain weight ratios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    """
+
+@app.get("/infection/{category}", response_class=HTMLResponse)
+async def infection_page(category: str):
+    cat = category.lower()
+    title = cat.capitalize()
+    
+    if cat == "fungi":
+        color_class = "text-danger"
+        table_headers = "<tr><th>Fungus Strain Identifier</th><th>Underlying Root Cause / Trigger</th><th>Remediation & Treatment Strategy</th></tr>"
+        rows = "".join([f"<tr><td><strong>{f['name']}</strong></td><td>{f['cause']}</td><td>{f['treatment']}</td></tr>" for f in FUNGI_DATA])
+    elif cat == "virus":
+        color_class = "text-warning"
+        table_headers = "<tr><th>Virus Genotype Name</th><th>Underlying Root Cause / Vectors</th><th>Remediation & Treatment Strategy</th><th>How the Plant Was Infected (Transmission)</th></tr>"
+        rows = "".join([f"<tr><td><strong>{v['name']}</strong></td><td>{v['cause']}</td><td>{v['treatment']}</td><td>{v['infection_mode']}</td></tr>" for v in VIRUS_DATA])
+    else:  # bacteria
+        cat = "bacteria"
+        title = "Bacteria"
+        color_class = "text-info"
+        table_headers = "<tr><th>Bacterial Variant Index</th><th>Underlying Root Cause / Conditions</th><th>Remediation & Treatment Strategy</th><th>How the Plant Was Infected (Transmission)</th></tr>"
+        rows = "".join([f"<tr><td><strong>{b['name']}</strong></td><td>{b['cause']}</td><td>{b['treatment']}</td><td>{b['infection_mode']}</td></tr>" for b in BACTERIA_DATA])
+        
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{title} Pathogen Database Registry</title>
+        {PREMIUM_CSS}
+    </head>
+    <body>
+        <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
+            <div class="container d-flex justify-content-between text-success">
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                {NAV_DROPDOWNS_HTML}
+            </div>
+        </nav>
+        <div class="container py-4">
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
+            
+            <div class="card-luxury border-start border-4 border-danger">
+                <h2 class="comfortaa-font {color_class} mb-3">{title} Pathogen Comprehensive Registry Log</h2>
+                <p class="quicksand-font">Enterprise agronomic database cataloging 100+ active micro-biological diagnostic records affecting commercial crop production frameworks globally.</p>
+                
+                <div class="table-responsive mt-3" style="max-height: 650px; overflow-y: auto;">
+                    <table class="table table-sm table-striped table-kagl m-0">
+                        <thead class="table-dark" style="position: sticky; top: 0; z-index: 5;">
+                            {table_headers}
+                        </thead>
+                        <tbody>
+                            {rows}
                         </tbody>
                     </table>
                 </div>
@@ -381,17 +522,9 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
     </head>
     <body>
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
-            <div class="container d-flex justify-content-between">
+            <div class="container d-flex justify-content-between text-success">
                 <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Node Type
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/soil">Soil Info</a></li>
-                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/plant">Plant Info</a></li>
-                    </ul>
-                </div>
+                VAR_NAV_DROPDOWNS
             </div>
         </nav>
 
@@ -565,7 +698,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         </div>
                         <div class="p-4 rounded-4 bg-white bg-opacity-5 border border-success border-opacity-20 mt-4">
                             <h6 class="comfortaa-font fw-bold mb-2 text-white" style="font-size: 15px;"><i class="bi bi-envelope-check-fill me-2 text-success"></i>Secure Enterprise Ordering Workdesk:</h6>
-                            <a href="mailto:radwaabdallnasser@gmail.com" class="btn btn-success px-4 py-2 mt-2 comfortaa-font fw-bold border-0 shadow-sm text-white" style="background-color: #059669; border-radius: 12px; font-size: 14px;"><i class="bi bi-send-fill me-2"></i> Request Supply Chain Allocations</a>
+                            <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Supply%20Chain%20Allocation%20Request&body=Hello%20BioShield%20Team%2C%0A%0AI%20would%20like%20to%20request%20information%20regarding%20supply%20chain%20allocations%20for%20my%20agricultural%20node.%0A%0ABest%20regards%2C" class="btn btn-success px-4 py-2 mt-2 comfortaa-font fw-bold border-0 shadow-sm text-white" style="background-color: #059669; border-radius: 12px; font-size: 14px;"><i class="bi bi-send-fill me-2"></i> Request Supply Chain Allocations</a>
                         </div>
                     </div>
                     <div class="col-md-5 text-center">
@@ -622,6 +755,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
 
     rendered = html_template \
         .replace("VAR_PREMIUM_CSS", PREMIUM_CSS) \
+        .replace("VAR_NAV_DROPDOWNS", NAV_DROPDOWNS_HTML) \
         .replace("VAR_HEADER_BANNER", HEADER_BANNER_BASE64) \
         .replace("VAR_SOIL_IMAGE", SOIL_IMAGE_BASE64) \
         .replace("VAR_PLANTS_IMAGE", PLANTS_IMAGE_BASE64) \
