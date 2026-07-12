@@ -120,6 +120,7 @@ AGRONOMIC_KNOWLEDGE.update({
 PREMIUM_CSS = """
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
     body, html, .navbar-brand, h1, h2, h3, h4, h5, h6, p, table, form, button, select, input {
         font-family: 'Times New Roman', Times, Baskerville, Georgia, serif !important;
@@ -220,43 +221,55 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
 
         <div class="container">
             
-            <!-- 📊 TOP OF PAGE: INTERACTIVE LAND DEGRADATION METRICS -->
-            <div class="card-luxury border-start border-4 border-success">
-                <span class="badge-premium-pill">BioShield Innovation Matrix</span>
+            <!-- 📊 TOP OF PAGE: INTERACTIVE LAND DEGRADATION METRICS WITH SOIL COZY GRID LAYOUT -->
+            <div class="card-luxury border-start border-4 border-success" style="background-color: #faf9f5; background-image: radial-gradient(#d3c7b3 1px, transparent 1px), radial-gradient(#d3c7b3 1px, #faf9f5 1px); background-size: 24px 24px; background-position: 0 0, 12px 12px; border: 1px solid #e2d7c5; position: relative; padding: 3rem 2.5rem;">
                 
-                <!-- 🌟 CUSTOM LUXURY SYSTEM PROSE FORMATTING (BLACK COLOR, LEFT ALIGNED, DIVERGENT FONTS) -->
-                <div style="text-align: left; color: #000000; margin-bottom: 35px;">
-                    <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif !important; font-size: 28px; font-weight: 700; color: #000000; margin: 0 0 16px 0; letter-spacing: -0.5px; border-bottom: 2px solid #e8f6ea; padding-bottom: 10px;">
+                <!-- 🌟 HIGH-END SOIL-THEMED ACADEMIC GRID INTERACTION HEADER DESIGN -->
+                <div style="text-align: center; color: #000000; margin-bottom: 40px; position: relative;">
+                    <div style="display: inline-block; position: relative; margin-bottom: 5px;">
+                        <!-- Custom Soil Mascot Concept Embedded Directly into Typography -->
+                        <span style="font-family: 'Comfortaa', cursive, sans-serif !important; font-size: 58px; font-weight: 700; color: #000000; letter-spacing: -1.5px; position: relative; z-index: 2;">
+                            D<span style="position: relative; display: inline-block; color: #000000;">e<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" style="position: absolute; width: 64px; height: 74px; top: -45px; left: -18px; z-index: -1; fill: none; stroke: #5d4037; stroke-width: 4.5; stroke-linecap: round;"><path d="M30,90 Q15,45 40,25 Q65,5 75,35 Q85,65 55,85 Q40,95 25,80" /><circle cx="45" cy="25" r="3" fill="#5d4037"/><circle cx="60" cy="28" r="3" fill="#5d4037"/><path d="M48,38 Q53,42 58,38" fill="none"/><path d="M72,12 L85,5 M78,18 L92,15" stroke-width="3"/></svg></span>scription
+                        </span>
+                    </div>
+                    <div style="font-family: 'Quicksand', sans-serif !important; font-size: 15px; font-weight: 500; color: #5d4037; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px;">
+                        Project overview &amp; purpose
+                    </div>
+                </div>
+
+                <!-- COZY TYPOGRAPHY TEXT RUNS -->
+                <div style="text-align: left; color: #000000; max-width: 900px; margin: 0 auto;">
+                    <h3 style="font-family: 'Comfortaa', sans-serif !important; font-size: 24px; font-weight: 700; color: #000000; margin: 0 0 18px 0; border-bottom: 2px dashed #d3c7b3; padding-bottom: 8px;">
                         Smart Biodegradable Soil Nutrient System
-                    </h2>
+                    </h3>
                     
-                    <p style="font-family: 'Georgia', serif !important; font-size: 16px; font-weight: 400; line-height: 1.6; color: #000000; margin: 0 0 20px 0;">
+                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #000000; margin: 0 0 22px 0; text-align: justify;">
                         Healthy soil is the foundation of sustainable agriculture, yet millions of hectares worldwide suffer from degradation caused by nutrient depletion, poor water retention, erosion, and excessive use of chemical fertilizers. Traditional soil analysis often requires laboratory testing, specialized equipment, and long waiting times, making it inaccessible or expensive for many farmers. As a result, soil problems are frequently identified too late, leading to reduced crop yields, increased production costs, unnecessary fertilizer application, and environmental pollution. Farmers need a rapid, affordable, and intelligent solution that helps them assess soil conditions and receive personalized recommendations directly in the field.
                     </p>
                     
-                    <p style="font-family: 'Georgia', serif !important; font-size: 16px; font-weight: 400; line-height: 1.6; color: #000000; margin: 0 0 20px 0;">
+                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #000000; margin: 0 0 22px 0; text-align: justify;">
                         BioShield is an AI-powered smart agriculture platform designed to help farmers and researchers evaluate soil health quickly and efficiently. Users simply upload a photo of their soil, and the platform analyzes visible characteristics such as texture, color, moisture indicators, and surface condition using artificial intelligence.
                     </p>
                     
-                    <!-- Integrated Design Element: Interactive Platform Features Grid Components -->
-                    <div style="background-color: #fafafa; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px; margin-top: 15px;">
-                        <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; font-size: 16px; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0;">
-                            Platform Deliverables & Analytics
+                    <!-- Integrated Cozy UI Element: Dynamic System Bullet Grid Components -->
+                    <div style="background-color: rgba(255, 255, 255, 0.85); border: 2px solid #e2d7c5; border-radius: 16px; padding: 24px; margin: 25px 0; box-shadow: 0 4px 15px rgba(93,64,55,0.03);">
+                        <h4 style="font-family: 'Comfortaa', sans-serif !important; font-size: 15px; font-weight: 700; color: #5d4037; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px 0;">
+                            ✨ Platform Deliverables &amp; Analytics
                         </h4>
-                        <ul style="font-family: 'Georgia', serif !important; font-size: 15px; color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
-                            <li style="margin-bottom: 6px;">Provides an instant <strong>Soil Health Score</strong> and identifies structural field anomalies.</li>
-                            <li style="margin-bottom: 6px;">Recommends optimal matching crop strands and suggests custom <strong>BioShield Nutrient Capsules</strong>.</li>
-                            <li style="margin-bottom: 6px;">Deploys practical actionable organic improvement strategies directly on-screen.</li>
+                        <ul style="font-family: 'Quicksand', sans-serif !important; font-size: 15.5px; font-weight: 500; color: #000000; margin: 0; padding-left: 22px; line-height: 1.7;">
+                            <li style="margin-bottom: 8px;">Provides an instant <strong>Soil Health Score</strong> and identifies structural field anomalies.</li>
+                            <li style="margin-bottom: 8px;">Recommends optimal matching crop strands and suggests custom <strong>BioShield Nutrient Capsules</strong>.</li>
+                            <li style="margin-bottom: 8px;">Deploys practical actionable organic improvement strategies directly on-screen.</li>
                             <li style="margin-bottom: 0;">Includes a persistent AI assistant, dynamic soil databases, disease logs, and historical baseline monitoring trackers.</li>
                         </ul>
                     </div>
                     
-                    <p style="font-family: 'Georgia', serif !important; font-size: 16px; font-weight: 400; line-height: 1.6; color: #000000; margin: 20px 0 0 0;">
+                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #000000; margin: 0; text-align: justify;">
                         By combining AI-driven analysis with biodegradable soil treatment solutions, BioShield aims to support sustainable farming, improve productivity, reduce unnecessary resource use, and make soil management more accessible.
                     </p>
                 </div>
                 
-                <hr class="my-4 text-secondary opacity-25">
+                <hr class="my-5 text-secondary opacity-25">
 
                 <!-- 🌟 HIGH FIDELITY MODERN CHART OVERHAUL LAYER -->
                 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #ffffff; padding: 20px; border-radius: 16px; border: 1px solid #e8f6ea;">
