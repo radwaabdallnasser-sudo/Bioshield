@@ -223,15 +223,38 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             <!-- 📊 TOP OF PAGE: INTERACTIVE LAND DEGRADATION METRICS -->
             <div class="card-luxury border-start border-4 border-success">
                 <span class="badge-premium-pill">BioShield Innovation Matrix</span>
-                <h2 class="fw-bold text-dark mb-3">Smart Biodegradable Soil Nutrient System</h2>
                 
-                <p class="text-muted fs-6 mb-4">
-                    Healthy soil is the foundation of sustainable agriculture, yet millions of hectares worldwide suffer from degradation caused by nutrient depletion, poor water retention, erosion, and excessive use of chemical fertilizers. Traditional soil analysis often requires laboratory testing, specialized equipment, and long waiting times, making it inaccessible or expensive for many farmers. As a result, soil problems are frequently identified too late, leading to reduced crop yields, increased production costs, unnecessary fertilizer application, and environmental pollution. Farmers need a rapid, affordable, and intelligent solution that helps them assess soil conditions and receive personalized recommendations directly in the field.
-                </p>
-                
-                <p class="text-muted fs-6 mb-4">
-                    BioShield is an AI-powered smart agriculture platform designed to help farmers and researchers evaluate soil health quickly and efficiently. Users simply upload a photo of their soil, and the platform analyzes visible characteristics such as texture, color, moisture indicators, and surface condition using artificial intelligence. Based on the analysis, BioShield provides a Soil Health Score, identifies potential issues, recommends suitable crops, suggests personalized BioShield nutrient capsules, and offers practical soil improvement strategies. The platform also includes an AI agricultural assistant, crop and soil databases, disease information, sustainability metrics, and progress tracking, enabling users to monitor soil health over time. By combining AI-driven analysis with biodegradable soil treatment solutions, BioShield aims to support sustainable farming, improve productivity, reduce unnecessary resource use, and make soil management more accessible.
-                </p>
+                <!-- 🌟 CUSTOM LUXURY SYSTEM PROSE FORMATTING (BLACK COLOR, LEFT ALIGNED, DIVERGENT FONTS) -->
+                <div style="text-align: left; color: #000000; margin-bottom: 35px;">
+                    <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif !important; font-size: 28px; font-weight: 700; color: #000000; margin: 0 0 16px 0; letter-spacing: -0.5px; border-bottom: 2px solid #e8f6ea; padding-bottom: 10px;">
+                        Smart Biodegradable Soil Nutrient System
+                    </h2>
+                    
+                    <p style="font-family: 'Georgia', serif !important; font-size: 16px; font-weight: 400; line-height: 1.6; color: #000000; margin: 0 0 20px 0;">
+                        Healthy soil is the foundation of sustainable agriculture, yet millions of hectares worldwide suffer from degradation caused by nutrient depletion, poor water retention, erosion, and excessive use of chemical fertilizers. Traditional soil analysis often requires laboratory testing, specialized equipment, and long waiting times, making it inaccessible or expensive for many farmers. As a result, soil problems are frequently identified too late, leading to reduced crop yields, increased production costs, unnecessary fertilizer application, and environmental pollution. Farmers need a rapid, affordable, and intelligent solution that helps them assess soil conditions and receive personalized recommendations directly in the field.
+                    </p>
+                    
+                    <p style="font-family: 'Georgia', serif !important; font-size: 16px; font-weight: 400; line-height: 1.6; color: #000000; margin: 0 0 20px 0;">
+                        BioShield is an AI-powered smart agriculture platform designed to help farmers and researchers evaluate soil health quickly and efficiently. Users simply upload a photo of their soil, and the platform analyzes visible characteristics such as texture, color, moisture indicators, and surface condition using artificial intelligence.
+                    </p>
+                    
+                    <!-- Integrated Design Element: Interactive Platform Features Grid Components -->
+                    <div style="background-color: #fafafa; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px; margin-top: 15px;">
+                        <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; font-size: 16px; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0;">
+                            Platform Deliverables & Analytics
+                        </h4>
+                        <ul style="font-family: 'Georgia', serif !important; font-size: 15px; color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                            <li style="margin-bottom: 6px;">Provides an instant <strong>Soil Health Score</strong> and identifies structural field anomalies.</li>
+                            <li style="margin-bottom: 6px;">Recommends optimal matching crop strands and suggests custom <strong>BioShield Nutrient Capsules</strong>.</li>
+                            <li style="margin-bottom: 6px;">Deploys practical actionable organic improvement strategies directly on-screen.</li>
+                            <li style="margin-bottom: 0;">Includes a persistent AI assistant, dynamic soil databases, disease logs, and historical baseline monitoring trackers.</li>
+                        </ul>
+                    </div>
+                    
+                    <p style="font-family: 'Georgia', serif !important; font-size: 16px; font-weight: 400; line-height: 1.6; color: #000000; margin: 20px 0 0 0;">
+                        By combining AI-driven analysis with biodegradable soil treatment solutions, BioShield aims to support sustainable farming, improve productivity, reduce unnecessary resource use, and make soil management more accessible.
+                    </p>
+                </div>
                 
                 <hr class="my-4 text-secondary opacity-25">
 
