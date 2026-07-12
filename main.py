@@ -522,7 +522,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 <h3 class="fw-bold text-dark mb-3"><i class="bi bi-database-fill-gear me-2"></i>Enterprise Agronomic Open Data Aggregates</h3>
                 <div class="accordion shadow-sm rounded" id="masterDataAccordion">
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button></h2>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button</h2>
                         <div id="cSoils" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>VAR_S_ROWS</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
@@ -614,7 +614,7 @@ async def run_audit_comparison_route(audit_id: str = Form(...), audit_file: Uplo
     return await platform_dashboard(audit_results=results)
 
 @app.post("/run-plant-canopy-scan", response_class=HTMLResponse)
-async def run_plant-canopy-scan_endpoint(file: UploadFile = File(...)):
+async def run_plant_canopy_scan_endpoint(file: UploadFile = File(...)):
     pm = dynamically_analyze_plant(file.filename)
     return f"""
     <!DOCTYPE html>
