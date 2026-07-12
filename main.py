@@ -81,8 +81,8 @@ HEADER_BANNER_BASE64 = (
     "  <text x='555' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='140' fill='%234db6ac' letter-spacing='-4'>l</text>"
     "  <text x='595' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='900' font-size='160' fill='%2326a69a' letter-spacing='-6'>d</text>"
     "</g>"
-    "<text x='520' y='160' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'>rapid, convenient, and efficient nutrients</text>"
-    "<text x='840' y='210' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'>residue check</text>"
+    "<text x='520' y='160' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'></text>"
+    "<text x='840' y='210' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'></text>"
     "<g transform='translate(950, 180) scale(1.3)'>"
     "  <path d='M0,100 Q40,40 80,0' fill='none' stroke='%234caf50' stroke-width='6' stroke-linecap='round'/>"
     "  <path d='M25,70 Q0,50 -10,55 Q5,75 25,70' fill='%2381c784'/>"
@@ -698,7 +698,12 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         </div>
                         <div class="p-4 rounded-4 bg-white bg-opacity-5 border border-success border-opacity-20 mt-4">
                             <h6 class="comfortaa-font fw-bold mb-2 text-white" style="font-size: 15px;"><i class="bi bi-envelope-check-fill me-2 text-success"></i>Secure Enterprise Ordering Workdesk:</h6>
-                            <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Supply%20Chain%20Allocation%20Request&body=Hello%20BioShield%20Team%2C%0A%0AI%20would%20like%20to%20request%20information%20regarding%20supply%20chain%20allocations%20for%20my%20agricultural%20node.%0A%0ABest%20regards%2C" class="btn btn-success px-4 py-2 mt-2 comfortaa-font fw-bold border-0 shadow-sm text-white" style="background-color: #059669; border-radius: 12px; font-size: 14px;"><i class="bi bi-send-fill me-2"></i> Request Supply Chain Allocations</a>
+                           <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Supply%20Chain%20Allocation%20Request&body=Hello%20BioShield%20Team%2C%0A%0AI%20would%20like%20to%20request%20information%20regarding%20supply%20chain%20allocations%20for%20my%20agricultural%20node.%0A%0ABest%20regards%2C" 
+       class="text-success" 
+       style="font-size: 1.5rem; text-decoration: none;" 
+       title="Request Supply Chain Allocations">
+        <i class="bi bi-envelope-fill"></i>
+    </a>
                         </div>
                     </div>
                     <div class="col-md-5 text-center">
