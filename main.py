@@ -1,3 +1,4 @@
+# Image Reference: object:image{} Morel name=image_a07f21.png
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import HTMLResponse
 import random
@@ -37,9 +38,8 @@ SOIL_IMAGE_BASE64 = (
     "</svg>"
 )
 
-# Updated Header Banner with Green/Mint background and dark text for contrast
 HEADER_BANNER_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500' style='background:%235bf3c5; border-radius:24px;'>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500' style='background:%23052419;'>"
     "<g transform='translate(120, 240) scale(1.1)'>"
     "  <ellipse cx='0' cy='-110' rx='35' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='2'/>"
     "  <ellipse cx='0' cy='-110' rx='20' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='1.5'/>"
@@ -57,22 +57,22 @@ HEADER_BANNER_BASE64 = (
     "<g transform='translate(210, 160)'>"
     "  <path d='M 10,185 Q 60,165 110,185 T 210,185 T 310,185' fill='none' stroke='%2342a5f5' stroke-width='14' stroke-linecap='round' opacity='0.75'/>"
     "  <path d='M 15,195 Q 65,175 115,195 T 215,195 T 315,195' fill='none' stroke='%2326a69a' stroke-width='10' stroke-linecap='round' opacity='0.75'/>"
-    "  <text x='15' y='140' font-family='Comfortaa, sans-serif' font-weight='900' font-size='175' fill='%23052419' letter-spacing='-6'>B</text>"
-    "  <text x='135' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='140' fill='%23059669' letter-spacing='-4'>i</text>"
-    "  <text x='170' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='145' fill='%23166534' letter-spacing='-4'>o</text>"
-    "  <text x='250' y='140' font-family='Comfortaa, sans-serif' font-weight='900' font-size='165' fill='%23eab308' letter-spacing='-5'>S</text>"
-    "  <text x='345' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='155' fill='%23ca8a04' letter-spacing='-4'>h</text>"
-    "  <text x='435' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='140' fill='%23854d0e' letter-spacing='-4'>i</text>"
-    "  <text x='475' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='145' fill='%230f766e' letter-spacing='-4'>e</text>"
-    "  <text x='555' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='140' fill='%23115e59' letter-spacing='-4'>l</text>"
-    "  <text x='595' y='140' font-family='Comfortaa, sans-serif' font-weight='900' font-size='160' fill='%23134e4a' letter-spacing='-6'>d</text>"
+    "  <text x='15' y='140' font-family='Comfortaa, sans-serif' font-weight='900' font-size='175' fill='%23e2e8f0' letter-spacing='-6'>B</text>"
+    "  <text x='135' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='140' fill='%2334d399' letter-spacing='-4'>i</text>"
+    "  <text x='170' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='145' fill='%2366bb6a' letter-spacing='-4'>o</text>"
+    "  <text x='250' y='140' font-family='Comfortaa, sans-serif' font-weight='900' font-size='165' fill='%23fff176' letter-spacing='-5'>S</text>"
+    "  <text x='345' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='155' fill='%23fbc02d' letter-spacing='-4'>h</text>"
+    "  <text x='435' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='140' fill='%23fff59d' letter-spacing='-4'>i</text>"
+    "  <text x='475' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='145' fill='%2380cbc4' letter-spacing='-4'>e</text>"
+    "  <text x='555' y='140' font-family='Comfortaa, sans-serif' font-weight='800' font-size='140' fill='%234db6ac' letter-spacing='-4'>l</text>"
+    "  <text x='595' y='140' font-family='Comfortaa, sans-serif' font-weight='900' font-size='160' fill='%2326a69a' letter-spacing='-6'>d</text>"
     "</g>"
-    "<text x='520' y='160' font-family='Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23000000' text-anchor='start'>rapid, convenient, and efficient nutrients</text>"
-    "<text x='840' y='210' font-family='Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23000000' text-anchor='start'>residue check</text>"
+    "<text x='520' y='160' font-family='Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23a7f3d0' text-anchor='start'>rapid, convenient, and efficient nutrients</text>"
+    "<text x='840' y='210' font-family='Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23a7f3d0' text-anchor='start'>residue check</text>"
     "<g transform='translate(950, 180) scale(1.3)'>"
-    "  <path d='M0,100 Q40,40 80,0' fill='none' stroke='%231b5e20' stroke-width='6' stroke-linecap='round'/>"
+    "  <path d='M0,100 Q40,40 80,0' fill='none' stroke='%234caf50' stroke-width='6' stroke-linecap='round'/>"
     "</g>"
-    "<text x='600' y='440' font-family='Impact, sans-serif' font-weight='900' font-size='42' fill='%23000000' text-anchor='middle' letter-spacing='1.5'>CHECK YOUR SOIL, CHECK FOR SAFETY</text>"
+    "<text x='600' y='440' font-family='Impact, sans-serif' font-weight='900' font-size='42' fill='%23ffffff' text-anchor='middle' letter-spacing='1.5'>CHECK YOUR SOIL, CHECK FOR SAFETY</text>"
     "</svg>"
 )
 
@@ -154,7 +154,7 @@ PREMIUM_CSS = """
     }
     body { background-color: #041a12; color: #e2e8f0; }
     .nav-premium { background: linear-gradient(90deg, #041a12 0%, #073324 100%); border-bottom: 4px solid #0f4633; }
-    .hero-premium { background: transparent; padding: 0; border-radius: 24px; }
+    .hero-premium { background: linear-gradient(135deg, #041a12 0%, #073324 100%); color: white; padding: 0; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,0.4); }
     .card-luxury { border: none; border-radius: 20px; background: #073324; box-shadow: 0 8px 24px rgba(0,0,0,0.2); padding: 2.2rem; margin-bottom: 1.8rem; border: 1px solid #0f4633; }
     
     .premium-showcase-img {
@@ -255,7 +255,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             <div class="hero-premium text-center mb-4 shadow-sm">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-                        <img src="VAR_HEADER_BANNER" class="w-100 border-0" style="border-radius:24px; box-shadow: 0 12px 36px rgba(0,0,0,0.4);" alt="BioShield System Interface">
+                        <img src="VAR_HEADER_BANNER" class="w-100 border-0" style="border-radius:24px;" alt="BioShield System Interface">
                     </div>
                 </div>
             </div>
