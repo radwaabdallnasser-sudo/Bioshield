@@ -47,8 +47,7 @@ SOIL_IMAGE_BASE64 = (
 HEADER_BANNER_BASE64 = (
     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' style='background:linear-gradient(90deg, %23112a14 0%25, %23271202 100%25);'>"
     "<g opacity='0.35'>"
-    "<p fill='%23fff' font-family='monospace' font-size='12'>"
-    "<text x='20' y='40'>[ALGORITHMIC SYSTEM FEED ACTIVE]</text>"
+    "<text x='20' y='40' fill='%23fff' font-family='monospace' font-size='12'>[ALGORITHMIC SYSTEM FEED ACTIVE]</text>"
     "</g>"
     "<path d='M0,400 Q300,280 600,350 T1200,310 L1200,400 Z' fill='%233e2723'/>"
     "<path d='M0,400 Q400,330 800,380 T1200,350 L1200,400 Z' fill='%231b0f0a'/>"
@@ -56,7 +55,7 @@ HEADER_BANNER_BASE64 = (
     "<path d='M750,360 Q700,200 780,100 Q860,200 810,360' fill='%234caf50' opacity='0.85'/>"
     "<circle cx='200' cy='80' r='12' fill='%23ffeb3b' opacity='0.3'/>"
     "<text x='600' y='180' font-family='sans-serif' font-weight='bold' font-size='42' fill='%23ffffff' text-anchor='middle' letter-spacing='2'>BIOSHIELD ECOSYSTEM</text>"
-    "<text x='600' y='220' font-family='sans-serif' font-size='18' fill='%23a1c7a3' text-anchor='middle'>Organic Topsoil Restoration %26 Botanical Health Intelligence</text>"
+    "<text x='600' y='220' font-family='sans-serif' font-size='18' fill='%23a1c7a3' text-anchor='middle'>Organic Topsoil Restoration &amp; Botanical Health Intelligence</text>"
     "</svg>"
 )
 
@@ -170,11 +169,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
 
     s_rows = "".join([f"<tr><td><strong>{s['type']}</strong></td><td>{s['origin']}</td><td>{s['ph']}</td><td>{s['ec']}</td><td>{s['salinity']}</td><td>{s['texture']}</td><td>{s['om']}</td><td>{s['whc']}</td><td>{s['crops']}</td><td>{s['problems']}</td><td>{s['improvements']}</td></tr>" for s in SOIL_DATABASES])
     c_rows = "".join([f"<tr><td><strong>{c['crop']}</strong></td><td>{c['ph']}</td><td>{c['temp']}</td><td>{c['water']}</td><td>{c['period']}</td><td>{c['diseases']}</td><td>{c['fertilizer']}</td><td>{c['yield']}</td></tr>" for c in CROP_DATABASES])
-    d_rows = "".join([f"<tr><td><strong>{d['name']}</strong></td><td>{d['symptoms']}</td><td>{d['cause']}</td><td>{d['severity']}</td><td>{d['prevention']}</td><td>{d['treatment']}</td></tr>" for d in DIST_DATABASES])
-    p_rows = "".join([f"<tr><td><strong>{p['name']}</strong></td><td>{p['symptoms']}</td><td>{p['damage']}</td><td class='text-success'>{p['organic']}</td><td class='text-danger'>{p['chemical']}</td><td class='text-primary'>{p['biological']}</td></tr>" for p in PEST_DATABASES])
     b_rows = "".join([f"<tr><td><strong>{b['prod']}</strong></td><td>{b['ingredients']}</td><td>{b['release']}</td><td>{b['app']}</td><td>{b['benefits']}</td><td>{b['crops']}</td><td>{b['soils']}</td></tr>" for b in BIOSHIELD_DATABASES])
-    i_rows = "".join([f"<tr><td><strong>{i['rule']}</strong></td><td>{i['crop']}</td><td>{i['soil']}</td><td>{i['weather']}</td><td>{i['temp']}</td><td>{i['stage']}</td><td class='table-success'>{i['action']}</td></tr>" for i in IRR_DATABASES])
-    w_rows = "".join([f"<tr><td><strong>{w['condition']}</strong></td><td>{w['rain']}</td><td>{w['wind']}</td><td>{w['humidity']}</td><td>{w['temp']}</td><td class='table-warning'>{w['action']}</td></tr>" for w in WEA_DATABASES])
     n_rows = "".join([f"<tr><td><strong>{n['element']}</strong></td><td>{n['leaf']}</td><td>{n['soil']}</td><td>{n['causes']}</td><td>{n['treatment']}</td><td class='text-success'>{n['co2']}</td></tr>" for n in NUT_DATABASES])
 
     return f"""
@@ -221,7 +216,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 <h3 class="fw-bold text-dark mb-3"><i class="bi bi-folder-symlink-fill me-2"></i>Dynamic Kaggle Agronomic Repositories (Data Dropdowns)</h3>
                 <div class="accordion shadow-sm rounded" id="kaggleMasterAccordion">
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold text-dark font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cSoil">🌍 1. Soil Texture & Origin Matrix</button></h2>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold text-dark font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cSoil">🌍 1. Soil Texture &amp; Origin Matrix</button></h2>
                         <div id="cSoil" class="accordion-collapse collapse" data-bs-parent="#kaggleMasterAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>{s_rows}</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
@@ -229,7 +224,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         <div id="cCrops" class="accordion-collapse collapse" data-bs-parent="#kaggleMasterAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Crop Name / Species</th><th>Ideal pH</th><th>Temperature Range</th><th>Water Requirement</th><th>Growth Period</th><th>Target Diseases</th><th>Fertilizer Needs</th><th>Target Yield</th></tr></thead><tbody>{c_rows}</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold text-dark font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cNutrients">🧪 3. Nutrient Deficiency Visual Diagnostics & CO₂ Mitigation</button></h2>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold text-dark font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cNutrients">🧪 3. Nutrient Deficiency Visual Diagnostics &amp; CO₂ Mitigation</button></h2>
                         <div id="cNutrients" class="accordion-collapse collapse" data-bs-parent="#kaggleMasterAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Deficient Element</th><th>Leaf Tissue Symptoms</th><th>Soil Trace Symptoms</th><th>Underlying Root Causes</th><th>Remediation Strategy</th><th>Carbon Capture / CO₂ Reduction Impact</th></tr></thead><tbody>{n_rows}</tbody></table></div></div></div>
                     </div>
                 </div>
@@ -285,7 +280,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
                     <div class="card-luxury h-100 border-top border-4 border-primary shadow-sm">
-                        <h4 class="fw-bold text-primary mb-2">2. Before & After Audits</h4>
+                        <h4 class="fw-bold text-primary mb-2">2. Before &amp; After Audits</h4>
                         <p class="text-muted small mb-3">Input an existing scan tracking code ID alongside a post-treatment capture to calculate physical regeneration rates.</p>
                         <form action="/run-audit-comparison" method="post" enctype="multipart/form-data">
                             <div class="row g-2 mb-2">
@@ -429,7 +424,7 @@ async def run_plant_canopy_scan_endpoint(file: UploadFile = File(...)):
     """
 
 @app.post("/run-soil-matrix-scan", response_class=HTMLResponse)
-async def run_soil-matrix-scan_route(weather_input: str = Form(...), file: UploadFile = File(...)):
+async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: UploadFile = File(...)):
     sm = dynamically_analyze_soil(file.filename)
     weather_notice = "🚨 ATMOSPHERIC WARNING: Extreme temperature active. Increase irrigation schedules." if "38°C" in weather_input else "🌤️ STABLE ATMOSPHERE: Proceed with standard capsule installation."
     return f"""
@@ -452,6 +447,10 @@ async def run_soil-matrix-scan_route(weather_input: str = Form(...), file: Uploa
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="card-luxury bg-info bg-opacity-10 border border-info m-0 mt-3">
+                <h5 class="fw-bold text-info mb-1"><i class="bi bi-cloud-lightning-rain-fill me-2"></i>Weather-Aware Application Timing Control</h5>
+                <p class="small text-dark mb-0 font-monospace mt-2">{weather_notice}</p>
             </div>
         </div>
     </body>
