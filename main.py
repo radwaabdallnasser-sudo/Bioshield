@@ -175,7 +175,7 @@ PREMIUM_CSS = """
     }
     body { background-color: #f7faf7; color: #224d2e; }
     .nav-premium { background: linear-gradient(90deg, #224d2e 0%, #2f7d32 100%); border-bottom: 4px solid #3d8f45; }
-    .hero-premium { background: linear-gradient(135deg, #224d2e 0%, #2f7d32 100%); color: white; padding: 3rem 2rem; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,0.04); }
+    .hero-premium { background: none; padding: 0; }
     .card-luxury { border: none; border-radius: 20px; background: white; box-shadow: 0 8px 24px rgba(0,0,0,0.02); padding: 2.2rem; margin-bottom: 1.8rem; }
     .graph-container { background: #ffffff; border: 1px solid #e8f6ea; border-radius: 16px; padding: 1.5rem; }
     
@@ -269,19 +269,24 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
 
         <div class="container">
             
-            <!-- 📊 TOP OF PAGE: INTERACTIVE LAND DEGRADATION METRICS WITH SOIL COZY GRID LAYOUT -->
+            <!-- 🌟 1. TOP OF PAGE: BIOSHIELD HERO IMAGE BANNER (image_9254bf.jpg) -->
+            <div class="hero-premium text-center mb-4 shadow-sm">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <img src="VAR_HEADER_BANNER" class="w-100 border-0" style="border-radius:24px; box-shadow: 0 12px 36px rgba(0,0,0,0.08);" alt="BioShield System Interface matching image_9254bf.jpg structure">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 📊 2. PROJECT OVERVIEW & PURPOSE SECTION (PLACEMENT IMMEDIATELY AFTER HERO BANNER) -->
             <div class="card-luxury border-start border-4 border-success" style="background-color: #faf9f5; background-image: radial-gradient(#d3c7b3 1px, transparent 1px), radial-gradient(#d3c7b3 1px, #faf9f5 1px); background-size: 24px 24px; background-position: 0 0, 12px 12px; border: 1px solid #e2d7c5; position: relative; padding: 3rem 2.5rem;">
                 
-                <!-- 🌟 HIGH-END SOIL-THEMED ACADEMIC GRID INTERACTION HEADER DESIGN -->
+                <!-- 🌟 HIGH-END SOIL-THEMED HEADER WITHOUT THE WORD "DESCRIPTION" -->
                 <div style="text-align: center; color: #000000; margin-bottom: 40px; position: relative;">
                     <div style="display: inline-block; position: relative; margin-bottom: 5px;">
-                        <!-- Custom Soil Mascot Concept Embedded Directly into Typography -->
-                        <span style="font-family: 'Comfortaa', cursive, sans-serif !important; font-size: 58px; font-weight: 700; color: #000000; letter-spacing: -1.5px; position: relative; z-index: 2;">
-                            D<span style="position: relative; display: inline-block; color: #000000;">e<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" style="position: absolute; width: 64px; height: 74px; top: -45px; left: -18px; z-index: -1; fill: none; stroke: #5d4037; stroke-width: 4.5; stroke-linecap: round;"><path d="M30,90 Q15,45 40,25 Q65,5 75,35 Q85,65 55,85 Q40,95 25,80" /><circle cx="45" cy="25" r="3" fill="#5d4037"/><circle cx="60" cy="28" r="3" fill="#5d4037"/><path d="M48,38 Q53,42 58,38" fill="none"/><path d="M72,12 L85,5 M78,18 L92,15" stroke-width="3"/></svg></span>scription
+                        <span style="font-family: 'Comfortaa', cursive, sans-serif !important; font-size: 52px; font-weight: 700; color: #000000; letter-spacing: -1.5px; position: relative; z-index: 2;">
+                            Project Overview &amp; Purpose
                         </span>
-                    </div>
-                    <div style="font-family: 'Quicksand', sans-serif !important; font-size: 15px; font-weight: 500; color: #5d4037; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px;">
-                        Project overview &amp; purpose
                     </div>
                 </div>
 
@@ -410,15 +415,6 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 </div>
             </div>
 
-            <div class="hero-premium text-center mb-4 shadow-sm" style="background: none; padding: 0;">
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <!-- Redesigned header to display the requested high-fidelity image components verbatim -->
-                        <img src="VAR_HEADER_BANNER" class="w-100 border-0" style="border-radius:24px; box-shadow: 0 12px 36px rgba(0,0,0,0.08);" alt="BioShield System Interface matching image_9254bf.jpg structure">
-                    </div>
-                </div>
-            </div>
-
             <!-- CORE SYSTEM APPLICATIONS SCANNERS MODULES LAYER -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
@@ -522,7 +518,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 <h3 class="fw-bold text-dark mb-3"><i class="bi bi-database-fill-gear me-2"></i>Enterprise Agronomic Open Data Aggregates</h3>
                 <div class="accordion shadow-sm rounded" id="masterDataAccordion">
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button</h2>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button></h2>
                         <div id="cSoils" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>VAR_S_ROWS</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
