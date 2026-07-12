@@ -264,6 +264,103 @@ def dynamically_analyze_plant(filename: str):
     blights = ["⚠️ CRITICAL BLIGHT INFESTATION: Active pathogen lesions detected.", "✅ CLEAN CANOPY: Structural visual layers nominal.", "⚠️ INFESTATION OBSERVED: Spore counts tracking high.", "✅ CLEAN CANOPY: Free of visible parasitic colonies."]
     return {"type": types[sig % 4], "origin": origins[(sig >> 2) % 4], "water": water_status[(sig >> 3) % 4], "blight": blights[(sig >> 4) % 4]}
 
+@app.get("/soil", response_class=HTMLResponse)
+async def soil_page():
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Soil Matrix & Management Procedures</title>
+        {PREMIUM_CSS}
+    </head>
+    <body>
+        <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Node Type
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/soil">Soil Info</a></li>
+                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/plant">Plant Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container py-4">
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
+            <div class="card-luxury border-start border-4 border-success">
+                <h2 class="comfortaa-font text-success mb-3">Agricultural Soil Presentation</h2>
+                <p class="quicksand-font">Soil serves as a living, dynamic ecosystem providing essential nutrients, anchoring structural support, and processing moisture vectors key for crop lifecycle continuation.</p>
+                
+                <h4 class="comfortaa-font text-success mt-4">How to Handle and Optimize Soil Systems:</h4>
+                <ul class="quicksand-font text-white-50">
+                    <li class="mb-2"><strong>Mitigate Compaction:</strong> Avoid moving heavy implements through damp soil lines to secure unblocked drainage corridors.</li>
+                    <li class="mb-2"><strong>Moisture Optimization:</strong> Incorporate natural porous biochar substrates to raise baseline water holding capacities inside coarse layers.</li>
+                    <li class="mb-2"><strong>PH Neutralization:</strong> Apply targeted micro-lime parameters to low acidic arrays, or treat hyper-alkaline systems with organic composition texturizers.</li>
+                    <li class="mb-2"><strong>Organic Matter Injections:</strong> Routinely mix crop residue matrices to promote humic aggregate generation.</li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    """
+
+@app.get("/plant", response_class=HTMLResponse)
+async def plant_page():
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Botanical Registries & Morphological Info</title>
+        {PREMIUM_CSS}
+    </head>
+    <body>
+        <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Node Type
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/soil">Soil Info</a></li>
+                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/plant">Plant Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container py-4">
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
+            <div class="card-luxury border-start border-4 border-success">
+                <h2 class="comfortaa-font text-success mb-3">Importance of Plant Ecosystems</h2>
+                <p class="quicksand-font">Plants operate as the primary organic engine of our ecosystem, capturing atmospheric carbon compounds through photosynthesis while producing biomass yield metrics critical for global nourishment arrays.</p>
+                
+                <h4 class="comfortaa-font text-success mt-4">How to Plant Appropriately Across Varieties:</h4>
+                <p class="quicksand-font text-white-50">Crop installation requires careful calculation of targeted spacing indexes, uniform field insertion depths, structural thermal ranges, and baseline organic matrix parameters configured specifically to each standalone variant.</p>
+                
+                <h4 class="comfortaa-font text-success mt-4">Morphological Structural Anatomy:</h4>
+                <div class="table-responsive mt-2">
+                    <table class="table table-bordered font-monospace small text-white align-middle">
+                        <thead class="table-dark">
+                            <tr><th>Botanical Structure Component</th><th>Functional Biological Operational Purpose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Flower</strong></td><td>Contains reproductive cellular arrays configured to manage pollination and seed generation rounds.</td></tr>
+                            <tr><td><strong>Root</strong></td><td>Anchors structural tissue blocks directly into surface aggregates while absorbing sub-surface moisture profiles and trace nutrients.</td></tr>
+                            <tr><td><strong>Stem</strong></td><td>Serves as the main physical vascular framework, driving fluid nutrient translocation between sub-surface roots and upper canopy leaf cells.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    """
+
 @app.get("/", response_class=HTMLResponse)
 async def platform_dashboard(chat_query: str = None, chat_response: str = None, audit_results: str = None, qr_results: str = None):
     chat_block = f'<div class="mt-3 p-3 rounded bg-dark border border-success font-monospace small"><p class="mb-1 text-success"><strong>🧑‍🌾 Match Query:</strong> {chat_query}</p><p class="mb-0 text-light"><strong>🤖 AI System Guidance:</strong> {chat_response}</p></div>' if chat_query else ""
@@ -286,7 +383,15 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
             <div class="container d-flex justify-content-between">
                 <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <span class="badge bg-dark text-success px-3 py-2 font-monospace fw-bold border border-success">EGYPT NODE [2026]</span>
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle text-success font-monospace fw-bold border border-success" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Node Type
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-dark border-success text-success" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/soil">Soil Info</a></li>
+                        <li><a class="dropdown-menu-item text-success p-2 d-block" style="text-decoration:none;" href="/plant">Plant Info</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
