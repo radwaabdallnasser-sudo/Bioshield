@@ -472,14 +472,19 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         <p class="text-white-50 small mb-4">
                             By triggering Systemic Acquired Resistance (SAR) within botanical rows, Salicylic Acid hardens vascular cellular lines to shield plant complexes against severe blights before infections lock in.
                         </p>
-                        <div class="p-3 rounded bg-white bg-opacity-10 border border-success text-white">
-                            <h6 class="fw-bold mb-1"><i class="bi bi-envelope-check-fill me-2"></i>Secure Enterprise Ordering Workdesk:</h6>
-                            <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Enterprise%20Order%20Inquiry" class="btn btn-success btn-sm fw-bold px-3 mt-2"><i class="bi bi-send-fill me-1"></i> Request Supply Chain Allocations</a>
-                        </div>
-                    </div>
+                       <div style="padding: 1rem; border-radius: 0.5rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid #198754; color: white;">
+        <h6 style="font-weight: bold; margin-bottom: 0.5rem;">Secure Enterprise Ordering Workdesk:</h6>
+        <a href="mailto:radwaabdallnasser@gmail.com?subject=BioShield%20Enterprise%20Order%20Inquiry" 
+           style="background-color: #198754; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 0.25rem; font-weight: bold; display: inline-block;">
+           Request Supply Chain Allocations
+        </a>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
                     <div class="col-md-5 text-center">
                         <div class="p-2 bg-dark rounded-4 shadow-lg overflow-hidden border border-success">
-                            <img src="VAR_BRAND_PNG" class="premium-showcase-img img-fluid" alt="BioShield Nutrients Premium Packaging Layer">
+                           st.image(r"C:\Users\m\Downloads\brand.png", caption="BioShield Nutrients Premium Packaging Layer")
                         </div>
                         <p class="text-white fw-bold mt-3 mb-0 fs-5">✨ Your Soil is Healthier, Your Life is Better ✨</p>
                     </div>
