@@ -1,6 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import HTMLResponse
-import hashlib
 import random
 
 app = FastAPI(title="BioShield Grand-Jury OS")
@@ -13,10 +12,10 @@ BRAND_PNG_BASE64 = (
     "<rect x='50' y='120' width='210' height='400' rx='20' fill='%23e2ede4' stroke='%231b5e20' stroke-width='4'/>"
     "<rect x='295' y='80' width='210' height='450' rx='20' fill='%23fbf8eb' stroke='%232e4d32' stroke-width='5'/>"
     "<rect x='540' y='120' width='210' height='400' rx='20' fill='%23eedffa' stroke='%234a148c' stroke-width='4'/>"
-    "<text x='400' y='260' font-family='Times New Roman', serif' font-weight='bold' font-size='32' fill='%231b5e20' text-anchor='middle'>BIOSHIELD</text>"
-    "<text x='400' y='300' font-family='Times New Roman', serif' font-size='18' fill='%23555' text-anchor='middle'>NUTRIENTS MATRIX</text>"
+    "<text x='400' y='260' font-family='Times New Roman, serif' font-weight='bold' font-size='32' fill='%231b5e20' text-anchor='middle'>BIOSHIELD</text>"
+    "<text x='400' y='300' font-family='Times New Roman, serif' font-size='18' fill='%23555' text-anchor='middle'>NUTRIENTS MATRIX</text>"
     "<circle cx='155' cy='420' r='30' fill='%238d6e63'/><circle cx='400' cy='430' r='45' fill='%233e2723'/><circle cx='645' cy='420' r='30' fill='%235c3a21'/>"
-    "<text x='400' y='570' font-family='Times New Roman', serif' font-weight='bold' font-size='16' fill='%232e4d32' text-anchor='middle'>Your Soil is Healthier, Your Life is Better</text>"
+    "<text x='400' y='570' font-family='Times New Roman, serif' font-weight='bold' font-size='16' fill='%232e4d32' text-anchor='middle'>Your Soil is Healthier, Your Life is Better</text>"
     "</svg>"
 )
 
@@ -106,7 +105,7 @@ for i in range(1, 101):
     })
 
 # =========================================================================
-# 🤖 INTERACTIVE AG-ASSISTANT POOL (EXACTLY 50 UNIQUE VECTOR POINTERS)
+# 🤖 INTERACTIVE AG-ASSISTANT POOL
 # =========================================================================
 AGRONOMIC_KNOWLEDGE = {
     f"agronomic_inquiry_node_{i}": f"Automated analytical response vector executing diagnostics metrics against systemic input telemetry reference group {i}."
@@ -191,12 +190,12 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
     c_rows = "".join([f"<tr><td><strong>{c['crop']}</strong></td><td>{c['ph']}</td><td>{c['temp']}</td><td>{c['water']}</td><td>{c['period']}</td><td>{c['diseases']}</td><td>{c['fertilizer']}</td><td class='text-success fw-bold'>{c['yield']}</td></tr>" for c in CROP_DATABASES])
     n_rows = "".join([f"<tr><td><strong>{n['element']}</strong></td><td>{n['leaf']}</td><td>{n['soil']}</td><td>{n['causes']}</td><td>{n['treatment']}</td><td class='text-success'>{n['co2']}</td></tr>" for n in NUT_DATABASES])
 
-    return f"""
+    html_template = """
     <!DOCTYPE html>
     <html>
     <head>
         <title>BioShield Grand Jury Agro-OS</title>
-        {PREMIUM_CSS}
+        VAR_PREMIUM_CSS
     </head>
     <body>
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
@@ -234,7 +233,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 <p class="lead max-width-800 mx-auto mt-2 text-white-50 fs-5">Integrated Analytical Compute Matrix &amp; Structural Topsoil Restoration</p>
                 <div class="row mt-4 justify-content-center">
                     <div class="col-md-11">
-                        <img src="{HEADER_BANNER_BASE64}" class="img-main border border-success border-3" alt="BioShield Grid">
+                        <img src="VAR_HEADER_BANNER" class="img-main border border-success border-3" alt="BioShield Grid">
                     </div>
                 </div>
             </div>
@@ -245,7 +244,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                     <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="fw-bold text-success m-0">1. AI Soil Structural Scanner</h4>
-                            <img src="{SOIL_IMAGE_BASE64}" class="img-thumb" alt="Soil Anchor">
+                            <img src="VAR_SOIL_IMAGE" class="img-thumb" alt="Soil Anchor">
                         </div>
                         <p class="text-muted small mb-3">Upload field captures to process unique metadata parameters including cracking layouts, compaction indicators, and surface moisture index logs.</p>
                         <form action="/run-soil-matrix-scan" method="post" enctype="multipart/form-data">
@@ -269,7 +268,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                     <div class="card-luxury h-100 border-top border-4 border-warning shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="fw-bold text-dark m-0">🌿 Plant Canopy Vision Model</h4>
-                            <img src="{PLANTS_IMAGE_BASE64}" class="img-thumb" alt="Plant Anchor">
+                            <img src="VAR_PLANTS_IMAGE" class="img-thumb" alt="Plant Anchor">
                         </div>
                         <p class="text-muted small mb-3">Upload localized crop nodes to parse absolute species groupings, origin traits, tissue watering indicators, and fungal spots.</p>
                         <form action="/run-plant-canopy-scan" method="post" enctype="multipart/form-data">
@@ -302,7 +301,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                             </div>
                             <button class="btn btn-primary w-100 btn-sm fw-bold" type="submit">Execute Regeneration Audit Linkage</button>
                         </form>
-                        {audit_block}
+                        VAR_AUDIT_BLOCK
                     </div>
                 </div>
 
@@ -317,7 +316,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                                 <button class="btn btn-dark btn-sm font-monospace fw-bold" type="submit">Look-up Registry</button>
                             </div>
                         </form>
-                        {qr_block}
+                        VAR_QR_BLOCK
                     </div>
                 </div>
             </div>
@@ -329,12 +328,12 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                     <div class="input-group mb-2">
                         <select name="user_query" class="form-select form-select-sm" required>
                             <option value="" disabled selected>-- Select an Agronomic Question --</option>
-                            {dropdown_options}
+                            VAR_DROPDOWN_OPTIONS
                         </select>
                         <button class="btn btn-info text-white btn-sm fw-bold" type="submit">Query Shell</button>
                     </div>
                 </form>
-                {chat_block}
+                VAR_CHAT_BLOCK
             </div>
 
             <!-- REPOS KAGGL DATA ACCORDIONS LAYER -->
@@ -343,15 +342,15 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 <div class="accordion shadow-sm rounded" id="masterDataAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button></h2>
-                        <div id="cSoils" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>{s_rows}</tbody></table></div></div></div>
+                        <div id="cSoils" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>VAR_S_ROWS</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cNutrients">🧪 2. Diagnostic Nutrient Matrices &amp; Carbon Mitigation (20 Total)</button></h2>
-                        <div id="cNutrients" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Deficient Element</th><th>Leaf Tissue Symptoms</th><th>Soil Trace Symptoms</th><th>Underlying Root Causes</th><th>Remediation Strategy</th><th>Carbon Capture Impact</th></tr></thead><tbody>{n_rows}</tbody></table></div></div></div>
+                        <div id="cNutrients" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Deficient Element</th><th>Leaf Tissue Symptoms</th><th>Soil Trace Symptoms</th><th>Underlying Root Causes</th><th>Remediation Strategy</th><th>Carbon Capture Impact</th></tr></thead><tbody>VAR_N_ROWS</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#cCrops">🌾 3. Botanical Crop Archetype Registry (100 Total Strains)</button></h2>
-                        <div id="cCrops" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Crop Strain Index ID</th><th>Ideal pH</th><th>Temperature Range</th><th>Watering Demand</th><th>Growth Cycle</th><th>Target Pathogens</th><th>Nutrient Profile</th><th>Production Performance Metrics</th></tr></thead><tbody>{c_rows}</tbody></table></div></div></div>
+                        <div id="cCrops" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Crop Strain Index ID</th><th>Ideal pH</th><th>Temperature Range</th><th>Watering Demand</th><th>Growth Cycle</th><th>Target Pathogens</th><th>Nutrient Profile</th><th>Production Performance Metrics</th></tr></thead><tbody>VAR_C_ROWS</tbody></table></div></div></div>
                     </div>
                 </div>
             </div>
@@ -375,7 +374,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                     </div>
                     <div class="col-md-5 text-center">
                         <div class="p-3 bg-white rounded-4 shadow-lg">
-                            <img src="{BRAND_PNG_BASE64}" class="img-fluid rounded-4" alt="BioShield Packaging Grid">
+                            <img src="VAR_BRAND_PNG" class="img-fluid rounded-4" alt="BioShield Packaging Grid">
                         </div>
                         <p class="text-warning fw-bold mt-3 mb-0 fs-5">✨ Your Soil is Healthier, Your Life is Better ✨</p>
                     </div>
@@ -386,6 +385,22 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
     </body>
     </html>
     """
+
+    rendered = html_template \
+        .replace("VAR_PREMIUM_CSS", PREMIUM_CSS) \
+        .replace("VAR_HEADER_BANNER", HEADER_BANNER_BASE64) \
+        .replace("VAR_SOIL_IMAGE", SOIL_IMAGE_BASE64) \
+        .replace("VAR_PLANTS_IMAGE", PLANTS_IMAGE_BASE64) \
+        .replace("VAR_BRAND_PNG", BRAND_PNG_BASE64) \
+        .replace("VAR_AUDIT_BLOCK", audit_block) \
+        .replace("VAR_QR_BLOCK", qr_block) \
+        .replace("VAR_DROPDOWN_OPTIONS", dropdown_options) \
+        .replace("VAR_CHAT_BLOCK", chat_block) \
+        .replace("VAR_S_ROWS", s_rows) \
+        .replace("VAR_C_ROWS", c_rows) \
+        .replace("VAR_N_ROWS", n_rows)
+
+    return HTMLResponse(content=rendered)
 
 @app.post("/run-chat-query", response_class=HTMLResponse)
 async def run_chat_query_endpoint(user_query: str = Form(...)):
@@ -488,3 +503,4 @@ async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: Uploa
         </div>
     </body>
     </html>
+    """
