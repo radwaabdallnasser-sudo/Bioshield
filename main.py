@@ -129,8 +129,6 @@ PREMIUM_CSS = """
     .hero-premium { background: linear-gradient(135deg, #224d2e 0%, #2f7d32 100%); color: white; padding: 3rem 2rem; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,0.04); }
     .card-luxury { border: none; border-radius: 20px; background: white; box-shadow: 0 8px 24px rgba(0,0,0,0.02); padding: 2.2rem; margin-bottom: 1.8rem; }
     .graph-container { background: #ffffff; border: 1px solid #e8f6ea; border-radius: 16px; padding: 1.5rem; }
-    .chart-bar-container { height: 32px; background-color: #f7faf7; border-radius: 16px; overflow: hidden; margin-bottom: 1.2rem; border: 1px solid #e8f6ea; display: flex; }
-    .chart-bar-fill { height: 100%; color: white; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; padding-left: 14px; transition: width 0.6s ease; }
     
     /* Premium Floating Product Image Showcase Animation */
     .premium-showcase-img {
@@ -237,30 +235,94 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 
                 <hr class="my-4 text-secondary opacity-25">
 
-                <div class="graph-container">
-                    <h5 class="fw-bold text-dark font-monospace mb-3"><i class="bi bi-exclamation-triangle-fill text-danger me-2"></i>Major causes of soil degradation</h5>
-                    <p class="text-muted small mb-3">Illustrative distribution of common drivers of agricultural soil degradation.</p>
+                <!-- 🌟 HIGH FIDELITY MODERN CHART OVERHAUL LAYER -->
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #ffffff; padding: 20px; border-radius: 16px; border: 1px solid #e8f6ea;">
                     
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">COMPACTION</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 75%;">75% Severity Impact</div></div>
-                    
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">NUTRIENT DEPLETION</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 80%;">80% Severity Impact</div></div>
-                    
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">ORGANIC MATTER LOSS</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 65%;">65% Severity Impact</div></div>
+                    <!-- DONUT CHART DIAGRAM -->
+                    <div style="margin-bottom: 50px;">
+                        <h2 style="font-size: 22px; font-weight: 600; color: #111827; margin: 0 0 6px 0; letter-spacing: -0.5px;">Major causes of soil degradation</h2>
+                        <p style="font-size: 14px; font-weight: 400; color: #6b7280; margin: 0 0 28px 0;">Illustrative distribution of common drivers of agricultural soil degradation.</p>
+                        
+                        <div style="text-align: center;">
+                            <svg width="260" height="260" viewBox="0 0 42 42" style="transform: rotate(-90deg); margin: 0 auto; display: block;">
+                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e5e7eb" stroke-width="4.5"></circle>
+                                
+                                <!-- Nutrient depletion (35%) -->
+                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#a7c7f7" stroke-width="4.5" stroke-dasharray="35 65" stroke-dashoffset="0"></circle>
+                                <!-- Water erosion (25%) -->
+                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#a8e0b6" stroke-width="4.5" stroke-dasharray="25 75" stroke-dashoffset="-35"></circle>
+                                <!-- Salinity (15%) -->
+                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#f5c2b3" stroke-width="4.5" stroke-dasharray="15 85" stroke-dashoffset="-60"></circle>
+                                <!-- Compaction (15%) -->
+                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#fceab2" stroke-width="4.5" stroke-dasharray="15 85" stroke-dashoffset="-75"></circle>
+                                <!-- Organic matter loss (10%) -->
+                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#c09bf2" stroke-width="4.5" stroke-dasharray="10 90" stroke-dashoffset="-90"></circle>
+                                
+                                <circle cx="21" cy="21" r="11" fill="#ffffff"></circle>
+                            </svg>
+                            
+                            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 28px; font-size: 13px; font-weight: 500; color: #374151;">
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #fceab2; border-radius: 50%;"></span> Compaction</div>
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #a7c7f7; border-radius: 50%;"></span> Nutrient depletion</div>
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #c09bf2; border-radius: 50%;"></span> Organic matter loss</div>
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #f5c2b3; border-radius: 50%;"></span> Salinity</div>
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #a8e0b6; border-radius: 50%;"></span> Water erosion</div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">SALINITY</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 45%;">45% Severity Impact</div></div>
+                    <!-- HORIZONTAL BAR CHART SYSTEM -->
+                    <div>
+                        <h2 style="font-size: 22px; font-weight: 600; color: #111827; margin: 0 0 6px 0; letter-spacing: -0.5px;">Common soil challenges affecting crop production</h2>
+                        <p style="font-size: 14px; font-weight: 400; color: #6b7280; margin: 0 0 28px 0;">Illustrative severity scores for common agricultural soil problems.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 14px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 20px; margin-bottom: 6px;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Poor water retention</div>
+                                <div style="flex-grow: 1; background-color: transparent;">
+                                    <div style="width: 92%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Low organic matter</div>
+                                <div style="flex-grow: 1; background-color: transparent;">
+                                    <div style="width: 85%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Nutrient deficiency</div>
+                                <div style="flex-grow: 1; background-color: transparent;">
+                                    <div style="width: 80%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Soil compaction</div>
+                                <div style="flex-grow: 1; background-color: transparent;">
+                                    <div style="width: 72%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Salinity</div>
+                                <div style="flex-grow: 1; background-color: transparent;">
+                                    <div style="width: 60%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Erosion</div>
+                                <div style="flex-grow: 1; background-color: transparent;">
+                                    <div style="width: 53%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">WATER EROSION</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill bg-success" style="width: 50%;">50% Severity Impact</div></div>
-                    
-                    <h5 class="fw-bold text-dark font-monospace mt-4 mb-3"><i class="bi bi-bar-chart-fill text-success me-2"></i>Bar Chart – Common Soil Challenges Affecting Crop Production</h5>
-                    <p class="text-muted small mb-3">Illustrative severity scores for common agricultural soil problems.</p>
-                    
-                    <label class="small fw-bold text-secondary font-monospace d-block mb-1">POOR WATER RETENTION</label>
-                    <div class="chart-bar-container"><div class="chart-bar-fill" style="width: 92%; background-color: #3d8f45;">Severity: 92 (Scale 0 - 100)</div></div>
+                        <div style="display: flex; margin-left: 140px; justify-content: space-between; font-size: 12px; color: #9ca3af; font-weight: 400; padding-top: 4px;">
+                            <span>0</span>
+                            <span>25</span>
+                            <span>50</span>
+                            <span>75</span>
+                            <span>100</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
