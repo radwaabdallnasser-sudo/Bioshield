@@ -8,16 +8,16 @@ app = FastAPI(title="BioShield Grand-Jury OS")
 # 🖼️ HIGH-FIDELITY VECTOR GRAPHICS EMBEDS (UPDATED BIOSHIELD SYSTEM)
 # =========================================================================
 BRAND_PNG_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23052419;'>"
-    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23073324' stroke='%230f4633' stroke-width='8'/>"
-    "<circle cx='400' cy='220' r='80' fill='%230c4430'/>"
-    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%2334d399' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
-    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23e2e8f0' text-anchor='middle'>BioShield Innovation</text>"
-    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%2334d399' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
-    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23a7f3d0' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23f7faf7;'>"
+    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23ffffff' stroke='%23e8f6ea' stroke-width='8'/>"
+    "<rect x='100' y='100' width='600' height='400' rx='20' fill='none' stroke='%232f7d32' stroke-width='4' stroke-dasharray='10,10'/>"
+    "<circle cx='400' cy='220' r='80' fill='%23e8f6ea'/>"
+    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%232f7d32' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
+    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23224d2e' text-anchor='middle'>BioShield Innovation</text>"
+    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%233d8f45' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
+    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23666666' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
     "</svg>"
 )
-
 PLANTS_IMAGE_BASE64 = (
     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23073324;'>"
     "<path d='M200,380 Q160,200 200,60 Q240,200 200,380' fill='%23041a12'/>"
