@@ -1,8 +1,57 @@
-from fastapi import FastAPI, File, UploadFile, Form
-from fastapi.responses import HTMLResponse
-import random
+# main.py
+import streamlit as st
 
-app = FastAPI(title="BioShield Grand-Jury OS")
+# Updated Header Banner with Dark Green Background
+HEADER_BANNER_BASE64 = (
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500' style='background:%23041a12;'>"
+    "<g transform='translate(120, 240) scale(1.1)'>"
+    "  <ellipse cx='0' cy='-110' rx='35' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='2'/>"
+    "  <ellipse cx='0' cy='-110' rx='20' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='1.5'/>"
+    "  <path d='M-5,-135 C-5,-145 5,-145 5,-135 Z' fill='%2350963e'/>"
+    "  <ellipse cx='-10' cy='-50' rx='18' ry='28' fill='%23ffd438' transform='rotate(-20, -10, -50)'/>"
+    "  <path d='M-25,-35 Q-15,-70 -2,-75 Q-10,-40 -25,-35' fill='%237cb342'/>"
+    "  <path d='M5,-32 Q5,-65 -8,-72 Q2,-45 5,-32' fill='%239ccc65'/>"
+    "  <circle cx='0' cy='10' r='16' fill='%23e53935'/>"
+    "  <circle cx='14' cy='22' r='14' fill='%23c62828'/>"
+    "  <path d='M0,-2 L4,6 L-4,6 Z' fill='%2350963e' transform='translate(0, -2)'/>"
+    "  <path d='M0,-2 L4,6 L-4,6 Z' fill='%2350963e' transform='translate(14, 10)'/>"
+    "  <path d='M-15,60 Q-25,90 5,100 Q30,105 25,75 Q20,50 -5,55 Z' fill='%236a1b9a' transform='rotate(-15, 0, 75)'/>"
+    "  <path d='M-12,52 Q-5,48 2,54 L-5,62 Z' fill='%234caf50' transform='rotate(-15, 0, 75)'/>"
+    "</g>"
+    "<g transform='translate(210, 160)'>"
+    "  <path d='M 10,185 Q 60,165 110,185 T 210,185 T 310,185' fill='none' stroke='%2342a5f5' stroke-width='14' stroke-linecap='round' opacity='0.75'/>"
+    "  <path d='M 15,195 Q 65,175 115,195 T 215,195 T 315,195' fill='none' stroke='%2326a69a' stroke-width='10' stroke-linecap='round' opacity='0.75'/>"
+    "  <text x='15' y='140' font-family='sans-serif' font-weight='900' font-size='175' fill='%23ffffff' letter-spacing='-6'>B</text>"
+    "  <text x='135' y='140' font-family='sans-serif' font-weight='800' font-size='140' fill='%23a7f3d0' letter-spacing='-4'>i</text>"
+    "  <text x='170' y='140' font-family='sans-serif' font-weight='800' font-size='145' fill='%2334d399' letter-spacing='-4'>o</text>"
+    "  <text x='250' y='140' font-family='sans-serif' font-weight='900' font-size='165' fill='%23fcd34d' letter-spacing='-5'>S</text>"
+    "  <text x='345' y='140' font-family='sans-serif' font-weight='800' font-size='155' fill='%23a7f3d0' letter-spacing='-4'>h</text>"
+    "  <text x='435' y='140' font-family='sans-serif' font-weight='800' font-size='140' fill='%236ee7b7' letter-spacing='-4'>i</text>"
+    "  <text x='475' y='140' font-family='sans-serif' font-weight='800' font-size='145' fill='%2380cbc4' letter-spacing='-4'>e</text>"
+    "  <text x='555' y='140' font-family='sans-serif' font-weight='800' font-size='140' fill='%234db6ac' letter-spacing='-4'>l</text>"
+    "  <text x='595' y='140' font-family='sans-serif' font-weight='900' font-size='160' fill='%2326a69a' letter-spacing='-6'>d</text>"
+    "</g>"
+    "<text x='520' y='160' font-family='sans-serif' font-weight='600' font-size='28' fill='%23e2e8f0' text-anchor='start'>rapid, convenient, and efficient nutrients</text>"
+    "<text x='840' y='210' font-family='sans-serif' font-weight='600' font-size='28' fill='%23e2e8f0' text-anchor='start'>residue check</text>"
+    "<g transform='translate(950, 180) scale(1.3)'>"
+    "  <path d='M0,100 Q40,40 80,0' fill='none' stroke='%234caf50' stroke-width='6' stroke-linecap='round'/>"
+    "  <path d='M25,70 Q0,50 -10,55 Q5,75 25,70' fill='%2381c784'/>"
+    "  <path d='M40,50 Q20,25 10,28 Q25,50 40,50' fill='%2381c784'/>"
+    "  <path d='M58,28 Q40,5 30,5 Q45,25 58,28' fill='%2381c784'/>"
+    "  <path d='M32,75 Q60,65 65,75 Q45,85 32,75' fill='%2366bb6a'/>"
+    "  <path d='M48,52 Q75,45 80,55 Q60,62 48,52' fill='%2366bb6a'/>"
+    "  <path d='M62,30 Q90,25 92,35 Q75,40 62,30' fill='%2366bb6a'/>"
+    "</g>"
+    "<text x='600' y='440' font-family='sans-serif' font-weight='900' font-size='42' fill='%2334d399' text-anchor='middle' letter-spacing='1.5'>CHECK YOUR SOIL, CHECK FOR SAFETY</text>"
+    "</svg>"
+)
+
+# App Layout
+st.set_page_config(page_title="BioShield", layout="wide")
+st.markdown(f'<img src="{HEADER_BANNER_BASE64}" style="width:100%; border-radius:10px;">', unsafe_allow_html=True)
+
+st.write("## Welcome to the BioShield Dashboard")
+st.write("Use the navigation or tools below to manage your soil health analysis.")
 
 # =========================================================================
 # 🖼️ HIGH-FIDELITY VECTOR GRAPHICS EMBEDS (UPDATED BIOSHIELD SYSTEM)
