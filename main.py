@@ -145,7 +145,6 @@ PREMIUM_CSS = """
     .form-control, .form-select { background-color: #041a12; border: 1px solid #0f4633; color: white; }
     .form-control:focus, .form-select:focus { background-color: #052419; color: white; border-color: #34d399; box-shadow: 0 0 0 0.25rem rgba(52, 211, 153, 0.25); }
     
-    /* Catchy & Fantastic Premium Ads Module Layout Styles */
     .showcase-container-lux {
         background: linear-gradient(145deg, #062f21 0%, #031c13 100%);
         border: 2px solid #0f4633;
@@ -419,9 +418,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 </div>
             </div>
 
-            <!-- =========================================================================
-            🌿 CATCHY & FANTASTIC REDESIGNED PREMIUM ADVERTISEMENT BANNER
-            ========================================================================= -->
+            <!-- Redesigned Ad Banner Structure -->
             <div class="showcase-container-lux my-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-7">
@@ -435,7 +432,6 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                             BioShield Nutrients combine biodegradable smart capsules, biochar technology, and AI-powered soil analysis to improve soil fertility, increase water retention, and promote sustainable crop production. Our approach completely replaces standard chemical side-effects by reinforcing underlying soil tissue. Formulated natively from organic assets: <strong>Banana Shells</strong> supply rich active organic Potassium (K); <strong>Eggshells</strong> deliver slow-release crystalline Calcium (Ca) matrices to halt structural collapse; <strong>Onion Extracts</strong> provide systemic protective barriers; and structured <strong>Biochar</strong> builds secure microscopic sponge channels to house biological ecosystems permanently.
                         </p>
                         
-                        <!-- The Salicylic Acid Section Styled Fantastic & Catchy -->
                         <div class="shield-card-glass p-4 mb-4">
                             <div class="d-flex align-items-center gap-3 mb-2">
                                 <div class="bg-success bg-opacity-25 rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
@@ -448,7 +444,6 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                             </p>
                         </div>
                         
-                        <!-- Secure Email Desk Placement -->
                         <div class="order-box-lux p-4 rounded d-flex flex-sm-row flex-column align-items-sm-center justify-content-between gap-3">
                             <div>
                                 <h6 class="text-white fw-bold mb-1"><i class="bi bi-hdd-network me-2 text-success"></i>Secure Enterprise Ordering Workdesk:</h6>
@@ -462,7 +457,6 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                     
                     <div class="col-lg-5 text-center">
                         <div class="d-inline-block p-2 bg-dark bg-opacity-50 rounded-4 border border-success border-opacity-20 shadow-lg position-relative">
-                            <!-- Local path targeting with premium live online failover handler -->
                             <img src="C:\\Users\\m\\Downloads\\brand.png" 
                                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&w=600&q=80';" 
                                  class="premium-showcase-img img-fluid" 
@@ -481,7 +475,6 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         
         <script>
-            // Donut logic parameters setup
             const ctxDonut = document.getElementById('soilDonutChart').getContext('2d');
             new Chart(ctxDonut, {
                 type: 'doughnut',
@@ -503,7 +496,6 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 }
             });
 
-            // Vertical rounded bars generation structure setup
             const ctxBar = document.getElementById('soilBarChart').getContext('2d');
             new Chart(ctxBar, {
                 type: 'bar',
@@ -548,7 +540,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
 
 @app.post("/run-chat-query", response_class=HTMLResponse)
 async def run_chat_query_endpoint(user_query: str = Form(...)):
-    resp = AGRONOMIC_KNOWLEDGE.get(user_query.strip(), "Inference completed against custom agronomic code block data arrays.")
+    resp = AGRONOMIC_KNOWLEDGE.get(user_query.strip(), "Inference completed against custom agronomic data arrays.")
     return await platform_dashboard(chat_query=user_query, chat_response=resp)
 
 @app.post("/run-qr-key-lookup", response_class=HTMLResponse)
