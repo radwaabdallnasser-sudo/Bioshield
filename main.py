@@ -8,64 +8,54 @@ app = FastAPI(title="BioShield Grand-Jury OS")
 # 🖼️ HIGH-FIDELITY VECTOR GRAPHICS EMBEDS (UPDATED BIOSHIELD SYSTEM)
 # =========================================================================
 BRAND_PNG_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23f7faf7;'>"
-    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23ffffff' stroke='%23e8f6ea' stroke-width='8'/>"
-    "<rect x='100' y='100' width='600' height='400' rx='20' fill='none' stroke='%232f7d32' stroke-width='4' stroke-dasharray='10,10'/>"
-    "<circle cx='400' cy='220' r='80' fill='%23e8f6ea'/>"
-    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%232f7d32' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
-    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23224d2e' text-anchor='middle'>BioShield Innovation</text>"
-    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%233d8f45' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
-    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23666666' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' style='background:%23052419;'>"
+    "<rect x='50' y='50' width='700' height='500' rx='24' fill='%23073324' stroke='%230f4633' stroke-width='8'/>"
+    "<circle cx='400' cy='220' r='80' fill='%230c4430'/>"
+    "<path d='M370,220 L390,240 L430,190' fill='none' stroke='%2334d399' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>"
+    "<text x='400' y='360' font-family='Times New Roman, serif' font-weight='800' font-size='42' fill='%23e2e8f0' text-anchor='middle'>BioShield Innovation</text>"
+    "<text x='400' y='410' font-family='Times New Roman, serif' font-weight='600' font-size='24' fill='%2334d399' text-anchor='middle'>Smart Biodegradable Soil Nutrient System</text>"
+    "<text x='400' y='460' font-family='Times New Roman, serif' font-size='16' fill='%23a7f3d0' text-anchor='middle'>Biochar Technology &amp; AI-Powered Analysis</text>"
     "</svg>"
 )
 
 PLANTS_IMAGE_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23e8f6ea;'>"
-    "<path d='M200,380 Q160,200 200,60 Q240,200 200,380' fill='%232e7d32'/>"
-    "<path d='M200,280 Q100,180 60,140 Q140,160 200,260' fill='%234caf50'/>"
-    "<path d='M200,240 Q300,140 340,100 Q260,120 200,220' fill='%2381c784'/>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23073324;'>"
+    "<path d='M200,380 Q160,200 200,60 Q240,200 200,380' fill='%23041a12'/>"
+    "<path d='M200,280 Q100,180 60,140 Q140,160 200,260' fill='%23059669'/>"
+    "<path d='M200,240 Q300,140 340,100 Q260,120 200,220' fill='%2334d399'/>"
     "<circle cx='200' cy='60' r='8' fill='%23fff7c2'/>"
     "</svg>"
 )
 
 SOIL_IMAGE_BASE64 = (
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%23efebe9;'>"
-    "<rect x='0' y='250' width='400' height='150' fill='%233e2723'/>"
-    "<rect x='0' y='300' width='400' height='100' fill='%23271202'/>"
-    "<path d='M 0,250 Q 50,230 100,250 T 200,250 T 300,250 T 400,250 L 400,400 L 0,400 Z' fill='%234e342e'/>"
-    "<circle cx='80' cy='280' r='6' fill='%238d6e63'/><circle cx='280' cy='330' r='8' fill='%23a1887f'/>"
-    "<path d='M120,250 L125,220 M270,245 L265,210' stroke='%232e7d32' stroke-width='4' stroke-linecap='round'/>"
+    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' style='background:%2311261f;'>"
+    "<rect x='0' y='250' width='400' height='150' fill='%2305140f'/>"
+    "<rect x='0' y='300' width='400' height='100' fill='%23020a07'/>"
+    "<path d='M 0,250 Q 50,230 100,250 T 200,250 T 300,250 T 400,250 L 400,400 L 0,400 Z' fill='%23071f17'/>"
+    "<circle cx='80' cy='280' r='6' fill='%231f4c3c'/><circle cx='280' cy='330' r='8' fill='%232a6651'/>"
+    "<path d='M120,250 L125,220 M270,245 L265,210' stroke='%2334d399' stroke-width='4' stroke-linecap='round'/>"
     "</svg>"
 )
 
-# 🎨 EXPLICIT HIGH-FIDELITY MATCH REPLICATING THE AESTHETIC DESIGN OF image_9254bf.jpg
 HEADER_BANNER_BASE64 = (
     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500' style='background:%235bfcd2;'>"
-    "<!-- LEFT SIDE: Stacked organic food items from image_9254bf.jpg -->"
     "<g transform='translate(120, 240) scale(1.1)'>"
-    "  <!-- Pumpkin -->"
     "  <ellipse cx='0' cy='-110' rx='35' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='2'/>"
     "  <ellipse cx='0' cy='-110' rx='20' ry='25' fill='%23ff9233' stroke='%23d87010' stroke-width='1.5'/>"
     "  <path d='M-5,-135 C-5,-145 5,-145 5,-135 Z' fill='%2350963e'/>"
-    "  <!-- Corn -->"
     "  <ellipse cx='-10' cy='-50' rx='18' ry='28' fill='%23ffd438' transform='rotate(-20, -10, -50)'/>"
     "  <path d='M-25,-35 Q-15,-70 -2,-75 Q-10,-40 -25,-35' fill='%237cb342'/>"
-    "  <path d='M5,-32 Q5,-65 -8,-72 Q2,-45 5,-32' fill='%239ccc65'/>"
-    "  <!-- Tomatoes -->"
+    "  <path d='M5,-32 Q5,-65 -8,-72 Q2,-45 5,-32' fill='%9ccc65'/>"
     "  <circle cx='0' cy='10' r='16' fill='%23e53935'/>"
     "  <circle cx='14' cy='22' r='14' fill='%23c62828'/>"
     "  <path d='M0,-2 L4,6 L-4,6 Z' fill='%2350963e' transform='translate(0, -2)'/>"
     "  <path d='M0,-2 L4,6 L-4,6 Z' fill='%2350963e' transform='translate(14, 10)'/>"
-    "  <!-- Eggplant -->"
     "  <path d='M-15,60 Q-25,90 5,100 Q30,105 25,75 Q20,50 -5,55 Z' fill='%236a1b9a' transform='rotate(-15, 0, 75)'/>"
     "  <path d='M-12,52 Q-5,48 2,54 L-5,62 Z' fill='%234caf50' transform='rotate(-15, 0, 75)'/>"
     "</g>"
-    "<!-- MAIN TYPOGRAPHY LOGO MARK WITH VIBRANT MATCHED PLAYFUL HUED PATHS -->"
     "<g transform='translate(210, 160)'>"
-    "  <!-- Water Wave Base Highlight line from design -->"
     "  <path d='M 10,185 Q 60,165 110,185 T 210,185 T 310,185' fill='none' stroke='%2342a5f5' stroke-width='14' stroke-linecap='round' opacity='0.75'/>"
     "  <path d='M 15,195 Q 65,175 115,195 T 215,195 T 315,195' fill='none' stroke='%2326a69a' stroke-width='10' stroke-linecap='round' opacity='0.75'/>"
-    "  <!-- BioShield Styled Playful Multi-Color Custom Text Layout -->"
     "  <text x='15' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='900' font-size='175' fill='%231b5e20' letter-spacing='-6'>B</text>"
     "  <text x='135' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='140' fill='%234caf50' letter-spacing='-4'>i</text>"
     "  <text x='170' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='145' fill='%2366bb6a' letter-spacing='-4'>o</text>"
@@ -76,10 +66,8 @@ HEADER_BANNER_BASE64 = (
     "  <text x='555' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='800' font-size='140' fill='%234db6ac' letter-spacing='-4'>l</text>"
     "  <text x='595' y='140' font-family='Comfortaa, Comic Sans MS, sans-serif' font-weight='900' font-size='160' fill='%2326a69a' letter-spacing='-6'>d</text>"
     "</g>"
-    "<!-- RIGHT SIDE: Secondary text content blocks inside image_9254bf.jpg -->"
     "<text x='520' y='160' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'>rapid, convenient, and efficient nutrients</text>"
     "<text x='840' y='210' font-family='Comfortaa, Quicksand, sans-serif' font-weight='600' font-size='28' fill='%23111111' text-anchor='start'>residue check</text>"
-    "<!-- Leafy branch on right edge matching image_9254bf.jpg -->"
     "<g transform='translate(950, 180) scale(1.3)'>"
     "  <path d='M0,100 Q40,40 80,0' fill='none' stroke='%234caf50' stroke-width='6' stroke-linecap='round'/>"
     "  <path d='M25,70 Q0,50 -10,55 Q5,75 25,70' fill='%2381c784'/>"
@@ -87,9 +75,8 @@ HEADER_BANNER_BASE64 = (
     "  <path d='M58,28 Q40,5 30,5 Q45,25 58,28' fill='%2381c784'/>"
     "  <path d='M32,75 Q60,65 65,75 Q45,85 32,75' fill='%2366bb6a'/>"
     "  <path d='M48,52 Q75,45 80,55 Q60,62 48,52' fill='%2366bb6a'/>"
-    "  <path d='M62,30 Q90,25 92,35 Q75,40 62,30' fill='%2366bb6a'/>"
+    "  <path d='M62,30 Q90,25 92,35 Q75,40 62,30' fill='%2362align'/>"
     "</g>"
-    "<!-- BOTTOM PROMINENT SUBHEADER TEXT CAPTION -->"
     "<text x='600' y='440' font-family='Impact, Arial Black, sans-serif' font-weight='900' font-size='42' fill='%23111111' text-anchor='middle' letter-spacing='1.5'>CHECK YOUR SOIL, CHECK FOR SAFETY</text>"
     "</svg>"
 )
@@ -151,18 +138,15 @@ for i in range(1, 101):
         "fertilizer": tpl["fertilizer"], "yield": yield_str
     })
 
-# =========================================================================
-# 🤖 INTERACTIVE AG-ASSISTANT POOL
-# =========================================================================
 AGRONOMIC_KNOWLEDGE = {
     f"agronomic_inquiry_node_{i}": f"Automated analytical response vector executing diagnostics metrics against systemic input telemetry reference group {i}."
     for i in range(1, 51)
 }
 AGRONOMIC_KNOWLEDGE.update({
-    "why is my soil cracking?": "Surface cracking points to volume reduction in high-shrink clay soils caused by excessive evaporation and organic matter depletion. Deploying the BioShield Capsule forms microsponges to stop this separation.",
-    "is my soil healthy?": "Visual evaluation shows surface composition stability. Healthy soils display distinct dark humus coloring, loose crumbly textures without crusting, and steady granular moistness.",
-    "what type of soil do i have?": "Our AI classifies this surface image texture matrix based on sand particulate dispersion, alluvial clay fracture gaps, or intermediate silt siltation patterns.",
-    "how can i improve my soil?": "Incorporate premium biochar substrate blocks and structured natural biomass arrays to permanently improve soil porous architecture and retain critical sub-surface microbes."
+    "why is my soil cracking?": "Surface cracking points to volume reduction in high-shrink clay soils caused by excessive evaporation and organic matter depletion.",
+    "is my soil healthy?": "Visual evaluation shows surface composition stability. Healthy soils display distinct dark humus coloring, loose crumbly textures without crusting.",
+    "what type of soil do i have?": "Our AI classifies this surface image texture matrix based on sand particulate dispersion, alluvial clay fracture gaps.",
+    "how can i improve my soil?": "Incorporate premium biochar substrate blocks and structured natural biomass arrays to permanently improve soil porous architecture."
 })
 
 PREMIUM_CSS = """
@@ -173,13 +157,11 @@ PREMIUM_CSS = """
     body, html, .navbar-brand, h1, h2, h3, h4, h5, h6, p, table, form, button, select, input {
         font-family: 'Times New Roman', Times, Baskerville, Georgia, serif !important;
     }
-    body { background-color: #f7faf7; color: #224d2e; }
-    .nav-premium { background: linear-gradient(90deg, #224d2e 0%, #2f7d32 100%); border-bottom: 4px solid #3d8f45; }
-    .hero-premium { background: none; padding: 0; }
-    .card-luxury { border: none; border-radius: 20px; background: white; box-shadow: 0 8px 24px rgba(0,0,0,0.02); padding: 2.2rem; margin-bottom: 1.8rem; }
-    .graph-container { background: #ffffff; border: 1px solid #e8f6ea; border-radius: 16px; padding: 1.5rem; }
+    body { background-color: #041a12; color: #e2e8f0; }
+    .nav-premium { background: linear-gradient(90deg, #041a12 0%, #073324 100%); border-bottom: 4px solid #0f4633; }
+    .hero-premium { background: linear-gradient(135deg, #041a12 0%, #073324 100%); color: white; padding: 0; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,0.4); }
+    .card-luxury { border: none; border-radius: 20px; background: #073324; box-shadow: 0 8px 24px rgba(0,0,0,0.2); padding: 2.2rem; margin-bottom: 1.8rem; border: 1px solid #0f4633; }
     
-    /* Premium Floating Product Image Showcase Animation */
     .premium-showcase-img {
         width: 100%;
         max-width: 600px;
@@ -192,13 +174,20 @@ PREMIUM_CSS = """
         100% { transform: translateY(0px); }
     }
     
-    .cure-banner-premium { background: linear-gradient(135deg, #224d2e 0%, #173520 100%); color: #f7faf7; border-radius: 24px; padding: 3rem; border-left: 12px solid #3d8f45; }
-    .img-main { border-radius: 20px; max-height: 400px; object-fit: cover; width: 100%; box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-    .img-thumb { border-radius: 14px; width: 100px; height: 100px; object-fit: cover; border: 3px solid #e8f6ea; background: #fff; }
-    .table-kagl { font-size: 0.9rem; color: #224d2e; }
-    .text-muted { color: #666666 !important; }
-    .badge-premium-pill { display: inline-block; background: #e8f6ea; color: #2f7d32; padding: 8px 18px; border-radius: 30px; margin-bottom: 20px; font-weight: 600; }
+    .cure-banner-premium { background: linear-gradient(135deg, #052419 0%, #02120c 100%); color: #f7faf7; border-radius: 24px; padding: 3rem; border-left: 12px solid #34d399; }
+    .img-thumb { border-radius: 14px; width: 100px; height: 100px; object-fit: cover; border: 3px solid #0f4633; background: #041a12; }
+    .table-kagl { font-size: 0.9rem; color: #e2e8f0; }
+    .table-kagl th { background-color: #041a12 !important; color: #34d399 !important; }
+    .table-kagl td { background-color: #073324 !important; color: #e2e8f0 !important; border-color: #0f4633 !important; }
+    .text-muted { color: #a7f3d0 !important; }
+    .badge-premium-pill { display: inline-block; background: #0c4430; color: #34d399; padding: 8px 18px; border-radius: 30px; margin-bottom: 20px; font-weight: 600; }
+    .accordion-item { background-color: #073324; border: 1px solid #0f4633; }
+    .accordion-button { background-color: #052419; color: #34d399; }
+    .accordion-button:not(.collapsed) { background-color: #073324; color: #34d399; }
+    .form-control, .form-select { background-color: #041a12; border: 1px solid #0f4633; color: white; }
+    .form-control:focus, .form-select:focus { background-color: #052419; color: white; border-color: #34d399; }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 """
 
 def execute_true_computer_vision_analysis(filename: str):
@@ -240,12 +229,11 @@ def dynamically_analyze_plant(filename: str):
     blights = ["⚠️ CRITICAL BLIGHT INFESTATION: Active pathogen lesions detected.", "✅ CLEAN CANOPY: Structural visual layers nominal.", "⚠️ INFESTATION OBSERVED: Spore counts tracking high.", "✅ CLEAN CANOPY: Free of visible parasitic colonies."]
     return {"type": types[sig % 4], "origin": origins[(sig >> 2) % 4], "water": water_status[(sig >> 3) % 4], "blight": blights[(sig >> 4) % 4]}
 
-
 @app.get("/", response_class=HTMLResponse)
 async def platform_dashboard(chat_query: str = None, chat_response: str = None, audit_results: str = None, qr_results: str = None):
-    chat_block = f'<div class="mt-3 p-3 rounded bg-white border border-success font-monospace small"><p class="mb-1 text-success"><strong>🧑‍🌾 Match Query:</strong> {chat_query}</p><p class="mb-0 text-dark"><strong>🤖 AI System Guidance:</strong> {chat_response}</p></div>' if chat_query else ""
-    audit_block = f'<div class="mt-3 p-3 rounded bg-white border border-primary font-monospace small">{audit_results}</div>' if audit_results else ""
-    qr_block = f'<div class="mt-3 p-3 rounded bg-white border border-warning font-monospace small">{qr_results}</div>' if qr_results else ""
+    chat_block = f'<div class="mt-3 p-3 rounded bg-dark border border-success font-monospace small"><p class="mb-1 text-success"><strong>🧑‍🌾 Match Query:</strong> {chat_query}</p><p class="mb-0 text-light"><strong>🤖 AI System Guidance:</strong> {chat_response}</p></div>' if chat_query else ""
+    audit_block = f'<div class="mt-3 p-3 rounded bg-dark border border-primary font-monospace small">{audit_results}</div>' if audit_results else ""
+    qr_block = f'<div class="mt-3 p-3 rounded bg-dark border border-warning font-monospace small">{qr_results}</div>' if qr_results else ""
     
     dropdown_options = "".join([f'<option value="{k}">{k.replace("_"," ").capitalize()}</option>' for k in AGRONOMIC_KNOWLEDGE.keys()])
     s_rows = "".join([f"<tr><td><strong>{s['type']}</strong></td><td>{s['origin']}</td><td>{s['ph']}</td><td>{s['ec']}</td><td>{s['salinity']}</td><td>{s['texture']}</td><td>{s['om']}</td><td>{s['whc']}</td><td>{s['crops']}</td><td>{s['problems']}</td><td>{s['improvements']}</td></tr>" for s in SOIL_DATABASES])
@@ -263,53 +251,46 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
             <div class="container d-flex justify-content-between">
                 <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <span class="badge bg-light text-success px-3 py-2 font-monospace fw-bold">EGYPT NODE [2026]</span>
+                <span class="badge bg-dark text-success px-3 py-2 font-monospace fw-bold border border-success">EGYPT NODE [2026]</span>
             </div>
         </nav>
 
         <div class="container">
             
-            <!-- 🌟 1. TOP OF PAGE: BIOSHIELD HERO IMAGE BANNER (image_9254bf.jpg) -->
             <div class="hero-premium text-center mb-4 shadow-sm">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-                        <img src="VAR_HEADER_BANNER" class="w-100 border-0" style="border-radius:24px; box-shadow: 0 12px 36px rgba(0,0,0,0.08);" alt="BioShield System Interface matching image_9254bf.jpg structure">
+                        <img src="VAR_HEADER_BANNER" class="w-100 border-0" style="border-radius:24px;" alt="BioShield System Interface">
                     </div>
                 </div>
             </div>
 
-            <!-- 📊 2. PROJECT OVERVIEW & PURPOSE SECTION (PLACEMENT IMMEDIATELY AFTER HERO BANNER) -->
-            <div class="card-luxury border-start border-4 border-success" style="background-color: #faf9f5; background-image: radial-gradient(#d3c7b3 1px, transparent 1px), radial-gradient(#d3c7b3 1px, #faf9f5 1px); background-size: 24px 24px; background-position: 0 0, 12px 12px; border: 1px solid #e2d7c5; position: relative; padding: 3rem 2.5rem;">
+            <div class="card-luxury" style="background-color: #052419; border: 1px solid #0f4633; padding: 3rem 2.5rem;">
                 
-                <!-- 🌟 HIGH-END SOIL-THEMED HEADER WITHOUT THE WORD "DESCRIPTION" -->
-                <div style="text-align: center; color: #000000; margin-bottom: 40px; position: relative;">
-                    <div style="display: inline-block; position: relative; margin-bottom: 5px;">
-                        <span style="font-family: 'Comfortaa', cursive, sans-serif !important; font-size: 52px; font-weight: 700; color: #000000; letter-spacing: -1.5px; position: relative; z-index: 2;">
-                            Project Overview &amp; Purpose
-                        </span>
-                    </div>
+                <div style="text-align: center; color: #ffffff; margin-bottom: 40px;">
+                    <span style="font-family: 'Comfortaa', cursive, sans-serif !important; font-size: 52px; font-weight: 700; color: #34d399; letter-spacing: -1.5px;">
+                        Overview &amp; purpose
+                    </span>
                 </div>
 
-                <!-- COZY TYPOGRAPHY TEXT RUNS -->
-                <div style="text-align: left; color: #000000; max-width: 900px; margin: 0 auto;">
-                    <h3 style="font-family: 'Comfortaa', sans-serif !important; font-size: 24px; font-weight: 700; color: #000000; margin: 0 0 18px 0; border-bottom: 2px dashed #d3c7b3; padding-bottom: 8px;">
+                <div style="text-align: left; color: #e2e8f0; max-width: 900px; margin: 0 auto;">
+                    <h3 style="font-family: 'Comfortaa', sans-serif !important; font-size: 24px; font-weight: 700; color: #34d399; margin: 0 0 18px 0; border-bottom: 2px dashed #0f4633; padding-bottom: 8px;">
                         Smart Biodegradable Soil Nutrient System
                     </h3>
                     
-                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #000000; margin: 0 0 22px 0; text-align: justify;">
+                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; margin: 0 0 22px 0; text-align: justify;">
                         Healthy soil is the foundation of sustainable agriculture, yet millions of hectares worldwide suffer from degradation caused by nutrient depletion, poor water retention, erosion, and excessive use of chemical fertilizers. Traditional soil analysis often requires laboratory testing, specialized equipment, and long waiting times, making it inaccessible or expensive for many farmers. As a result, soil problems are frequently identified too late, leading to reduced crop yields, increased production costs, unnecessary fertilizer application, and environmental pollution. Farmers need a rapid, affordable, and intelligent solution that helps them assess soil conditions and receive personalized recommendations directly in the field.
                     </p>
                     
-                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #000000; margin: 0 0 22px 0; text-align: justify;">
+                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; margin: 0 0 22px 0; text-align: justify;">
                         BioShield is an AI-powered smart agriculture platform designed to help farmers and researchers evaluate soil health quickly and efficiently. Users simply upload a photo of their soil, and the platform analyzes visible characteristics such as texture, color, moisture indicators, and surface condition using artificial intelligence.
                     </p>
                     
-                    <!-- Integrated Cozy UI Element: Dynamic System Bullet Grid Components -->
-                    <div style="background-color: rgba(255, 255, 255, 0.85); border: 2px solid #e2d7c5; border-radius: 16px; padding: 24px; margin: 25px 0; box-shadow: 0 4px 15px rgba(93,64,55,0.03);">
-                        <h4 style="font-family: 'Comfortaa', sans-serif !important; font-size: 15px; font-weight: 700; color: #5d4037; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px 0;">
+                    <div style="background-color: #041a12; border: 2px solid #0f4633; border-radius: 16px; padding: 24px; margin: 25px 0;">
+                        <h4 style="font-family: 'Comfortaa', sans-serif !important; font-size: 15px; font-weight: 700; color: #34d399; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px 0;">
                             ✨ Platform Deliverables &amp; Analytics
                         </h4>
-                        <ul style="font-family: 'Quicksand', sans-serif !important; font-size: 15.5px; font-weight: 500; color: #000000; margin: 0; padding-left: 22px; line-height: 1.7;">
+                        <ul style="font-family: 'Quicksand', sans-serif !important; font-size: 15.5px; font-weight: 500; margin: 0; padding-left: 22px; line-height: 1.7; color: #e2e8f0;">
                             <li style="margin-bottom: 8px;">Provides an instant <strong>Soil Health Score</strong> and identifies structural field anomalies.</li>
                             <li style="margin-bottom: 8px;">Recommends optimal matching crop strands and suggests custom <strong>BioShield Nutrient Capsules</strong>.</li>
                             <li style="margin-bottom: 8px;">Deploys practical actionable organic improvement strategies directly on-screen.</li>
@@ -317,108 +298,44 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         </ul>
                     </div>
                     
-                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #000000; margin: 0; text-align: justify;">
+                    <p style="font-family: 'Quicksand', sans-serif !important; font-size: 16.5px; font-weight: 500; line-height: 1.7; margin: 0; text-align: justify;">
                         By combining AI-driven analysis with biodegradable soil treatment solutions, BioShield aims to support sustainable farming, improve productivity, reduce unnecessary resource use, and make soil management more accessible.
                     </p>
                 </div>
                 
-                <hr class="my-5 text-secondary opacity-25">
+                <hr class="my-5 opacity-25" style="border-color: #0f4633;">
 
-                <!-- 🌟 HIGH-FIDELITY MODERN CHART OVERHAUL LAYER -->
-                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #ffffff; padding: 20px; border-radius: 16px; border: 1px solid #e8f6ea;">
-                    
-                    <!-- DONUT CHART DIAGRAM -->
-                    <div style="margin-bottom: 50px;">
-                        <h2 style="font-size: 22px; font-weight: 600; color: #111827; margin: 0 0 6px 0; letter-spacing: -0.5px;">Major causes of soil degradation</h2>
-                        <p style="font-size: 14px; font-weight: 400; color: #6b7280; margin: 0 0 28px 0;">Illustrative distribution of common drivers of agricultural soil degradation.</p>
+                <!-- 🌟 STACKED CHARTS ENGINE SYSTEM REALIGNED -->
+                <div class="row justify-content-center">
+                    <div class="col-md-9 bg-dark p-4 rounded-4 border border-success" style="background-color: #041a12 !important;">
                         
-                        <div style="text-align: center;">
-                            <svg width="260" height="260" viewBox="0 0 42 42" style="transform: rotate(-90deg); margin: 0 auto; display: block;">
-                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e5e7eb" stroke-width="4.5"></circle>
-                                
-                                <!-- Nutrient depletion (35%) -->
-                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#a7c7f7" stroke-width="4.5" stroke-dasharray="35 65" stroke-dashoffset="0"></circle>
-                                <!-- Water erosion (25%) -->
-                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#a8e0b6" stroke-width="4.5" stroke-dasharray="25 75" stroke-dashoffset="-35"></circle>
-                                <!-- Salinity (15%) -->
-                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#f5c2b3" stroke-width="4.5" stroke-dasharray="15 85" stroke-dashoffset="-60"></circle>
-                                <!-- Compaction (15%) -->
-                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#fceab2" stroke-width="4.5" stroke-dasharray="15 85" stroke-dashoffset="-75"></circle>
-                                <!-- Organic matter loss (10%) -->
-                                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#c09bf2" stroke-width="4.5" stroke-dasharray="10 90" stroke-dashoffset="-90"></circle>
-                                
-                                <circle cx="21" cy="21" r="11" fill="#ffffff"></circle>
-                            </svg>
-                            
-                            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 28px; font-size: 13px; font-weight: 500; color: #374151;">
-                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #fceab2; border-radius: 50%;"></span> Compaction</div>
-                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #a7c7f7; border-radius: 50%;"></span> Nutrient depletion</div>
-                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #c09bf2; border-radius: 50%;"></span> Organic matter loss</div>
-                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #f5c2b3; border-radius: 50%;"></span> Salinity</div>
-                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background-color: #a8e0b6; border-radius: 50%;"></span> Water erosion</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HORIZONTAL BAR CHART SYSTEM -->
-                    <div>
-                        <h2 style="font-size: 22px; font-weight: 600; color: #111827; margin: 0 0 6px 0; letter-spacing: -0.5px;">Common soil challenges affecting crop production</h2>
-                        <p style="font-size: 14px; font-weight: 400; color: #6b7280; margin: 0 0 28px 0;">Illustrative severity scores for common agricultural soil problems.</p>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 14px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 20px; margin-bottom: 6px;">
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Poor water retention</div>
-                                <div style="flex-grow: 1; background-color: transparent;">
-                                    <div style="width: 92%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
-                                </div>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Low organic matter</div>
-                                <div style="flex-grow: 1; background-color: transparent;">
-                                    <div style="width: 85%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
-                                </div>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Nutrient deficiency</div>
-                                <div style="flex-grow: 1; background-color: transparent;">
-                                    <div style="width: 80%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
-                                </div>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Soil compaction</div>
-                                <div style="flex-grow: 1; background-color: transparent;">
-                                    <div style="width: 72%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
-                                </div>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Salinity</div>
-                                <div style="flex-grow: 1; background-color: transparent;">
-                                    <div style="width: 60%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
-                                </div>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 140px; font-size: 13px; color: #4b5563; font-weight: 400; text-align: right; padding-right: 14px;">Erosion</div>
-                                <div style="flex-grow: 1; background-color: transparent;">
-                                    <div style="width: 53%; height: 28px; background-color: #5da0fa; border-radius: 6px;"></div>
-                                </div>
+                        <!-- Top View: Donut Component -->
+                        <div class="text-center mb-5">
+                            <h4 class="text-white fw-bold">Major causes of soil degradation</h4>
+                            <p class="text-muted small">Illustrative distribution of common drivers of agricultural soil degradation.</p>
+                            <div class="d-flex justify-content-center" style="height: 280px; position: relative;">
+                                <canvas id="soilDonutChart"></canvas>
                             </div>
                         </div>
 
-                        <div style="display: flex; margin-left: 140px; justify-content: space-between; font-size: 12px; color: #9ca3af; font-weight: 400; padding-top: 4px;">
-                            <span>0</span>
-                            <span>25</span>
-                            <span>50</span>
-                            <span>75</span>
-                            <span>100</span>
+                        <!-- Bottom View: Vertical Rounded Bar Component -->
+                        <div>
+                            <h4 class="text-white fw-bold text-center">Common soil challenges affecting crop production</h4>
+                            <p class="text-muted small text-center">Illustrative severity scores for common agricultural soil problems.</p>
+                            <div style="height: 300px; position: relative;">
+                                <canvas id="soilBarChart"></canvas>
+                            </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
 
-            <!-- CORE SYSTEM APPLICATIONS SCANNERS MODULES LAYER -->
-            <div class="row g-4 mb-4">
+            <!-- CORE SYSTEM SCANNERS MODULES LAYER -->
+            <div class="row g-4 mb-4 mt-2">
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
+                    <div class="card-luxury h-100 border-top border-4 border-success">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="fw-bold text-success m-0">1. AI Soil Structural Scanner</h4>
                             <img src="VAR_SOIL_IMAGE" class="img-thumb" alt="Soil Capture Interface">
@@ -442,9 +359,9 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
+                    <div class="card-luxury h-100 border-top border-4 border-success">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="fw-bold text-dark m-0">🌿 Plant Canopy Vision Model</h4>
+                            <h4 class="fw-bold text-emerald m-0" style="color:#34d399;">🌿 Plant Canopy Vision Model</h4>
                             <img src="VAR_PLANTS_IMAGE" class="img-thumb" alt="Plant Capture Interface">
                         </div>
                         <p class="text-muted small mb-3">Upload localized crop nodes to parse absolute species groupings, origin traits, tissue watering indicators, and fungal spots.</p>
@@ -462,7 +379,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             <!-- AUDITS AND REGISTRY KEY INTERACTIVE LINK LAYER -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
+                    <div class="card-luxury h-100 border-top border-4 border-success">
                         <h4 class="fw-bold text-success mb-2">2. Before &amp; After Audits</h4>
                         <p class="text-muted small mb-3">Input an existing scan tracking code ID alongside a post-treatment capture to calculate physical regeneration rates.</p>
                         <form action="/run-audit-comparison" method="post" enctype="multipart/form-data">
@@ -483,12 +400,12 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card-luxury h-100 border-top border-4 border-success shadow-sm">
-                        <h4 class="fw-bold text-dark mb-2">3. Capsule QR Interaction</h4>
+                    <div class="card-luxury h-100 border-top border-4 border-success">
+                        <h4 class="fw-bold text-light mb-2">3. Capsule QR Interaction</h4>
                         <p class="text-muted small mb-3">Scan or type the product package identifier key to pull up dynamic application rules, usage coordinates, and logs.</p>
                         <form action="/run-qr-key-lookup" method="post">
                             <div class="input-group mb-2">
-                                <span class="input-group-text font-monospace small bg-light">Package Serial Key:</span>
+                                <span class="input-group-text font-monospace small bg-dark text-white border-secondary">Package Serial:</span>
                                 <input type="text" name="qr_serial" class="form-control font-monospace form-control-sm" value="BS-MATRIX-GL-2026" required>
                                 <button class="btn btn-success btn-sm font-monospace fw-bold" type="submit">Look-up Registry</button>
                             </div>
@@ -499,7 +416,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             </div>
 
             <!-- CHAT EXPERT CONSOLE -->
-            <div class="card-luxury border-top border-4 border-success shadow-sm">
+            <div class="card-luxury border-top border-4 border-success">
                 <h4 class="fw-bold text-success mb-2">Integrated AI Agronomic Chat Assistant Sandbox</h4>
                 <form action="/run-chat-query" method="post">
                     <div class="input-group mb-2">
@@ -513,26 +430,26 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                 VAR_CHAT_BLOCK
             </div>
 
-            <!-- REPOS KAGGL DATA ACCORDIONS LAYER -->
+            <!-- REPOS ACCORDIONS LAYER -->
             <div class="card-luxury border-start border-4 border-success">
-                <h3 class="fw-bold text-dark mb-3"><i class="bi bi-database-fill-gear me-2"></i>Enterprise Agronomic Open Data Aggregates</h3>
+                <h3 class="fw-bold text-light mb-3"><i class="bi bi-database-fill-gear me-2"></i>Enterprise Agronomic Open Data Aggregates</h3>
                 <div class="accordion shadow-sm rounded" id="masterDataAccordion">
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button></h2>
-                        <div id="cSoils" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>VAR_S_ROWS</tbody></table></div></div></div>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cSoils">🌍 1. Soil Texture &amp; Origin Matrix</button></h2>
+                        <div id="cSoils" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Soil Type</th><th>Origin</th><th>pH</th><th>EC</th><th>Salinity</th><th>Texture</th><th>O.M.</th><th>WHC</th><th>Crops</th><th>Problems</th><th>Improvements</th></tr></thead><tbody>VAR_S_ROWS</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-success" type="button" data-bs-toggle="collapse" data-bs-target="#cNutrients">🧪 2. Diagnostic Nutrient Matrices &amp; Carbon Mitigation (20 Total)</button></h2>
-                        <div id="cNutrients" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Deficient Element</th><th>Leaf Tissue Symptoms</th><th>Soil Trace Symptoms</th><th>Underlying Root Causes</th><th>Remediation Strategy</th><th>Carbon Capture Impact</th></tr></thead><tbody>VAR_N_ROWS</tbody></table></div></div></div>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cNutrients">🧪 2. Diagnostic Nutrient Matrices &amp; Carbon Mitigation (20 Total)</button></h2>
+                        <div id="cNutrients" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Deficient Element</th><th>Leaf Tissue Symptoms</th><th>Soil Trace Symptoms</th><th>Underlying Root Causes</th><th>Remediation Strategy</th><th>Carbon Capture Impact</th></tr></thead><tbody>VAR_N_ROWS</tbody></table></div></div></div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#cCrops">🌾 3. Botanical Crop Archetype Registry (100 Total Strains)</button></h2>
-                        <div id="cCrops" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body bg-white p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Crop Strain Index ID</th><th>Ideal pH</th><th>Temperature Range</th><th>Watering Demand</th><th>Growth Cycle</th><th>Target Pathogens</th><th>Nutrient Profile</th><th>Production Performance Metrics</th></tr></thead><tbody>VAR_C_ROWS</tbody></table></div></div></div>
+                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold font-monospace" type="button" data-bs-toggle="collapse" data-bs-target="#cCrops">🌾 3. Botanical Crop Archetype Registry (100 Total Strains)</button></h2>
+                        <div id="cCrops" class="accordion-collapse collapse" data-bs-parent="#masterDataAccordion"><div class="accordion-body p-0"><div class="table-responsive"><table class="table table-sm table-striped table-kagl m-0"><thead class="table-dark"><tr><th>Crop Strain Index ID</th><th>Ideal pH</th><th>Temperature Range</th><th>Watering Demand</th><th>Growth Cycle</th><th>Target Pathogens</th><th>Nutrient Profile</th><th>Production Performance Metrics</th></tr></thead><tbody>VAR_C_ROWS</tbody></table></div></div></div>
                     </div>
                 </div>
             </div>
 
-            <!-- CURE PRODUCT ADVERTISEMENT FOOTER WITH PREMIUM FLOATING ANIMATED PACKAGING IMAGE -->
+            <!-- ADVERTISEMENT FOOTER LAYER -->
             <div class="cure-banner-premium shadow-lg mt-4 mb-5">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-7">
@@ -550,8 +467,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
                         </div>
                     </div>
                     <div class="col-md-5 text-center">
-                        <div class="p-2 bg-white rounded-4 shadow-lg overflow-hidden">
-                            <!-- Premium Embedded Product Vector Graphics Image Asset with Floating Keyframe Styling -->
+                        <div class="p-2 bg-dark rounded-4 shadow-lg overflow-hidden border border-success">
                             <img src="VAR_BRAND_PNG" class="premium-showcase-img img-fluid" alt="BioShield Nutrients Premium Packaging Layer">
                         </div>
                         <p class="text-white fw-bold mt-3 mb-0 fs-5">✨ Your Soil is Healthier, Your Life is Better ✨</p>
@@ -560,6 +476,60 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- CHART CONTROLLER INJECTOR SCRIPT -->
+        <script>
+            // Donut logic parameters setup
+            const ctxDonut = document.getElementById('soilDonutChart').getContext('2d');
+            new Chart(ctxDonut, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Compaction', 'Nutrient depletion', 'Organic matter loss', 'Salinity', 'Water erosion'],
+                    datasets: [{
+                        data: [15, 35, 10, 15, 25],
+                        backgroundColor: ['#fcd34d', '#60a5fa', '#c084fc', '#fca5a5', '#4ade80'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#a7f3d0', font: { size: 11 } } }
+                    },
+                    cutout: '65%'
+                }
+            });
+
+            // Vertical rounded bars generation structure setup
+            const ctxBar = document.getElementById('soilBarChart').getContext('2d');
+            const gr = ctxBar.createLinearGradient(0, 0, 0, 260);
+            gr.addColorStop(0, '#34d399');
+            gr.addColorStop(1, '#059669');
+
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: ['Water Ret.', 'Org. Matter', 'Nutrient Def.', 'Compaction', 'Salinity', 'Erosion'],
+                    datasets: [{
+                        data: [92, 85, 80, 72, 60, 53],
+                        backgroundColor: gr,
+                        borderRadius: 15,
+                        borderSkipped: false,
+                        barPercentage: 0.45
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: '#6ee7b7' } },
+                        y: { grid: { color: 'rgba(110, 231, 183, 0.1)' }, ticks: { color: '#6ee7b7' }, max: 100 }
+                    }
+                }
+            });
+        </script>
     </body>
     </html>
     """
@@ -588,10 +558,10 @@ async def run_chat_query_endpoint(user_query: str = Form(...)):
 @app.post("/run-qr-key-lookup", response_class=HTMLResponse)
 async def run_qr_key_lookup_endpoint(qr_serial: str = Form(...)):
     results = f"""
-    <div class="p-2 border rounded border-success bg-light text-dark">
+    <div class="p-2 border rounded border-success bg-dark text-white">
         <span class="badge bg-success font-monospace mb-2">Core Status: Validated</span><br>
         <strong>Registry Reference Tag:</strong> Matches Serial Node: {qr_serial}<br>
-        <strong>Trace Operational Logs:</strong> Sealed capsule batch verified for deep microstructural soil restoration protocols.
+        <strong>Trace Logs:</strong> Sealed capsule batch verified for dynamic soil micro-restoration.
     </div>
     """
     return await platform_dashboard(qr_results=results)
@@ -601,10 +571,10 @@ async def run_audit_comparison_route(audit_id: str = Form(...), audit_file: Uplo
     random.seed(len(audit_file.filename) + 124)
     improvement = random.randint(25, 45)
     results = f"""
-    <h6 class="fw-bold text-success mb-2"><i class="bi bi-check-circle-fill me-1"></i> Audit Matrix Core Link Established for Token ID {audit_id}</h6>
-    <ul class="mb-0 text-dark list-unstyled">
-        <li><strong>Artifact Parsed:</strong> {audit_file.filename} processed successfully.</li>
-        <li><strong>Physical Regeneration Rate:</strong> <span class="text-success fw-bold">+{improvement}% Expansion</span> in stable biological porous cohesion channels.</li>
+    <h6 class="fw-bold text-success mb-2"><i class="bi bi-check-circle-fill me-1"></i> Audit Matrix Linked for {audit_id}</h6>
+    <ul class="mb-0 text-white list-unstyled small font-monospace">
+        <li><strong>Artifact File:</strong> {audit_file.filename}</li>
+        <li><strong>Regeneration Index:</strong> <span class="text-success fw-bold">+{improvement}% Dynamic Shift</span></li>
     </ul>
     """
     return await platform_dashboard(audit_results=results)
@@ -620,10 +590,10 @@ async def run_plant_canopy_scan_endpoint(file: UploadFile = File(...)):
         <div class="container py-5">
             <a href="/" class="btn btn-outline-success btn-sm mb-4">← Back to Terminal Dashboard</a>
             <div class="card-luxury border-start border-4 border-success">
-                <h3 class="fw-bold text-dark mb-3">Plant Vision Diagnostic Profile</h3>
+                <h3 class="fw-bold text-light mb-3">Plant Vision Diagnostic Profile</h3>
                 <p class="text-muted small font-monospace">Uploaded Canopy Image: <strong>{file.filename}</strong></p>
                 <div class="table-responsive">
-                    <table class="table table-bordered font-monospace small">
+                    <table class="table table-bordered font-monospace small text-white">
                         <thead class="table-dark">
                             <tr><th>Evaluated Botanical Layer</th><th>AI Visual Extracted Value Output</th></tr>
                         </thead>
@@ -655,16 +625,16 @@ async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: Uploa
             <a href="/" class="btn btn-outline-success btn-sm mb-4">← Return to Terminal Dashboard</a>
             
             <div class="card-luxury border-start border-4 border-success shadow-sm">
-                <h3 class="fw-bold text-dark mb-1">Computer Vision Feature Extraction Matrix</h3>
+                <h3 class="fw-bold text-light mb-1">Computer Vision Feature Extraction Matrix</h3>
                 <p class="text-muted small mb-4">Analyzed Resource Image Artifact: <span class="font-monospace text-success fw-bold">{file.filename}</span></p>
                 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped font-monospace small shadow-sm">
+                    <table class="table table-bordered font-monospace small text-white">
                         <thead class="table-dark">
                             <tr><th>Target Surface Metric Attribute</th><th>AI Vision Core Analytical Output Values</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>Soil Color Spectrum</strong></td><td class="fw-bold text-dark">{analytics['color']}</td></tr>
+                            <tr><td><strong>Soil Color Spectrum</strong></td><td class="fw-bold text-success">{analytics['color']}</td></tr>
                             <tr><td><strong>Surface Texture Profile</strong></td><td>{analytics['texture']}</td></tr>
                             <tr><td><strong>Presence of Structural Cracks</strong></td><td>{analytics['cracks']}</td></tr>
                             <tr><td><strong>Moisture Appearance Index</strong></td><td>{analytics['moisture']}</td></tr>
@@ -674,9 +644,9 @@ async def run_soil_matrix_scan_route(weather_input: str = Form(...), file: Uploa
                 </div>
             </div>
             
-            <div class="card-luxury bg-success bg-opacity-10 border border-success shadow-sm">
+            <div class="card-luxury bg-dark border border-success shadow-sm">
                 <h5 class="fw-bold text-success mb-1"><i class="bi bi-brightness-high-fill me-2"></i>Weather-Integrated Application Safety Threshold</h5>
-                <p class="small text-dark font-monospace mt-2 mb-0">{weather_notice}</p>
+                <p class="small text-light font-monospace mt-2 mb-0">{weather_notice}</p>
             </div>
         </div>
     </body>
