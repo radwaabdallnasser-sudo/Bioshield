@@ -199,8 +199,38 @@ PREMIUM_CSS = """
     .accordion-button:not(.collapsed) { background-color: #073324; color: #34d399; }
     .form-control, .form-select { background-color: #041a12; border: 1px solid #0f4633; color: white; }
     .form-control:focus, .form-select:focus { background-color: #052419; color: white; border-color: #34d399; }
+    .dropdown-menu { background-color: #052419; border: 1px solid #0f4633; }
+    .dropdown-item { color: #e2e8f0; }
+    .dropdown-item:hover { background-color: #073324; color: #34d399; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+"""
+
+# HTML Shared Navigation Drops snippet component
+NAV_DROPDOWNS_HTML = """
+<div class="d-flex gap-2">
+    <!-- Planting Dropdown -->
+    <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle btn-sm font-monospace fw-bold px-3 py-2" type="button" id="plantingDrop" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-flower1 me-1"></i> Planting
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow shadow-lg" aria-labelledby="plantingDrop">
+            <li><a class="dropdown-item font-monospace small" href="/planting/soil">Soil Profile</a></li>
+            <li><a class="dropdown-item font-monospace small" href="/planting/plant">Plant Physiology</a></li>
+        </ul>
+    </div>
+    <!-- Infection Dropdown -->
+    <div class="dropdown">
+        <button class="btn btn-outline-danger dropdown-toggle btn-sm font-monospace fw-bold px-3 py-2" type="button" id="infectionDrop" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-virus me-1"></i> Infection
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow shadow-lg" aria-labelledby="infectionDrop">
+            <li><a class="dropdown-item font-monospace small" href="/infection/fungi">Fungi Pathogens</a></li>
+            <li><a class="dropdown-item font-monospace small" href="/infection/virus">Virus Matrix</a></li>
+            <li><a class="dropdown-item font-monospace small" href="/infection/bacteria">Bacteria Analytics</a></li>
+        </ul>
+    </div>
+</div>
 """
 
 def execute_true_computer_vision_analysis(filename: str):
@@ -262,9 +292,9 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
     </head>
     <body>
         <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
-            <div class="container d-flex justify-content-between">
+            <div class="container d-flex justify-content-between align-items-center">
                 <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
-                <span class="badge bg-dark text-success px-3 py-2 font-monospace fw-bold border border-success">EGYPT NODE [2026]</span>
+                VAR_NAV_DROPDOWNS_HTML
             </div>
         </nav>
 
@@ -549,6 +579,7 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
 
     rendered = html_template \
         .replace("VAR_PREMIUM_CSS", PREMIUM_CSS) \
+        .replace("VAR_NAV_DROPDOWNS_HTML", NAV_DROPDOWNS_HTML) \
         .replace("VAR_HEADER_BANNER", HEADER_BANNER_BASE64) \
         .replace("VAR_SOIL_IMAGE", SOIL_IMAGE_BASE64) \
         .replace("VAR_PLANTS_IMAGE", PLANTS_IMAGE_BASE64) \
@@ -562,6 +593,170 @@ async def platform_dashboard(chat_query: str = None, chat_response: str = None, 
         .replace("VAR_N_ROWS", n_rows)
 
     return HTMLResponse(content=rendered)
+
+# =========================================================================
+# 🆕 NEW NAVIGATION ROUTE TARGET PAGES REQUESTED BY USER
+# =========================================================================
+
+@app.get("/planting/soil", response_class=HTMLResponse)
+async def page_planting_soil():
+    content = """
+    <!DOCTYPE html>
+    <html>
+    <head><title>Planting - Soil Profile Matrix</title>VAR_PREMIUM_CSS</head>
+    <body>
+        <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                VAR_NAV_DROPDOWNS_HTML
+            </div>
+        </nav>
+        <div class="container py-4">
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Back to Dashboard</a>
+            <div class="card-luxury border-start border-4 border-success">
+                <h2 class="fw-bold text-success mb-3">🌍 Soil Profile &amp; Handling Techniques</h2>
+                <p class="text-white-50">Understanding your soil's composition is vital to maximizing fertility, moisture absorption, and aeration structural profiles across multiple seasons.</p>
+                
+                <h4 class="text-white mt-4 font-monospace h5">1. Presenting Common Soil Types</h4>
+                <div class="table-responsive my-3">
+                    <table class="table table-bordered text-white font-monospace small table-kagl">
+                        <thead>
+                            <tr><th>Soil Texture Class</th><th>Physical Characteristics</th><th>Inherent Weakness</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Clay Soil</strong></td><td>Fine particles, sticky when wet, rock-solid when dry. High nutrient holding baseline.</td><td>Poor drainage, waterlogging, severe compacting risk.</td></tr>
+                            <tr><td><strong>Sandy Soil</strong></td><td>Coarse distinct grains, loose aggregate architecture, highly porous.</td><td>Rapid nutrient leaching, low moisture storage retention.</td></tr>
+                            <tr><td><strong>Loam Soil</strong></td><td>Balanced blend of sand, silt, and clay. Optimal agricultural workspace.</td><td>Requires continuous replenishment of decomposing biological humus.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="text-white mt-4 font-monospace h5">2. How to Handle and Improve Soil Health</h4>
+                <ul class="text-white-50 lh-lg">
+                    <li><strong>Managing Compaction:</strong> Avoid moving heavy machinery across wet fields. Implement deep vertical aeration cycles.</li>
+                    <li><strong>Boosting Water Retention:</strong> Incorporate structured biochar matrices or organic compost to form microscopic sponge compartments inside sandy zones.</li>
+                    <li><strong>Regulating Nutrient Reserves:</strong> Apply slow-release organic capsules loaded with banana or eggshell residues rather than synthetic alternatives.</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    </html>
+    """.replace("VAR_PREMIUM_CSS", PREMIUM_CSS).replace("VAR_NAV_DROPDOWNS_HTML", NAV_DROPDOWNS_HTML)
+    return HTMLResponse(content=content)
+
+
+@app.get("/planting/plant", response_class=HTMLResponse)
+async def page_planting_plant():
+    content = """
+    <!DOCTYPE html>
+    <html>
+    <head><title>Planting - Plant Physiology</title>VAR_PREMIUM_CSS</head>
+    <body>
+        <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                VAR_NAV_DROPDOWNS_HTML
+            </div>
+        </nav>
+        <div class="container py-4">
+            <a href="/" class="btn btn-outline-success btn-sm mb-4">← Back to Dashboard</a>
+            <div class="card-luxury border-start border-4 border-success">
+                <h2 class="fw-bold text-emerald mb-3" style="color:#34d399;">🌿 Importance of Plants &amp; Cultivation Dynamics</h2>
+                <p class="text-white-50">Plants are the central engine driving global carbon capture, oxygen production, and nutritional security. Effective cultivation relies on nurturing distinct morphological organs.</p>
+                
+                <h4 class="text-white font-monospace h5 mt-4">1. Plant Organs &amp; Physiological Functions</h4>
+                <div class="table-responsive my-3">
+                    <table class="table table-bordered text-white font-monospace small table-kagl">
+                        <thead>
+                            <tr><th>Organ Structure</th><th>Biological Importance and Structural Function</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Root System</strong></td><td>Anchors the vegetative body safely into fields; absorbs primary minerals, trace moisture elements.</td></tr>
+                            <tr><td><strong>Stem / Vascular Highway</strong></td><td>Provides spatial architecture holding canopy upwards; transports raw sap via xylem and phloem pipelines.</td></tr>
+                            <tr><td><strong>Leaf Canopies</strong></td><td>The photosynthetic solar panels processing carbon dioxide gas into simple bio-sugars under light rays.</td></tr>
+                            <tr><td><strong>Flower Systems</strong></td><td>The reproductive flagship structures producing seed pods or protective crop fruits to secure lifecycles.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="text-white font-monospace h5 mt-4">2. How to Plant Differently Based on Crop Types</h4>
+                <p class="text-white-50">Different plant varieties call for specialized placement techniques:</p>
+                <ul class="text-white-50 lh-lg">
+                    <li><strong>Deep Seeds vs. Shallow Shoots:</strong> Large seeds like corn require deeper placement, while tiny herb seeds need thin surface coverage to intercept light.</li>
+                    <li><strong>Spacing Arrays:</strong> High-canopy trees require broad lateral clearance, whereas row crops can grow closely to optimize micro-climates.</li>
+                    <li><strong>Transplanting Seedlings:</strong> Delicate saplings need minimal root exposure to prevent shock during outdoor transfers.</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    </html>
+    """.replace("VAR_PREMIUM_CSS", PREMIUM_CSS).replace("VAR_NAV_DROPDOWNS_HTML", NAV_DROPDOWNS_HTML)
+    return HTMLResponse(content=content)
+
+
+@app.get("/infection/{inf_type}", response_class=HTMLResponse)
+async def page_infection_matrix(inf_type: str):
+    title_map = {"fungi": "Fungi Pathogens Matrix", "virus": "Viral Infections Matrix", "bacteria": "Bacterial Diseases Matrix"}
+    title_str = title_map.get(inf_type.lower(), "Pathogen Infection Matrix")
+    
+    # Generate database dynamic table depending on URI path param clicked
+    if inf_type.lower() == "fungi":
+        rows = """
+        <tr><td>Early Blight (Alternaria solani)</td><td>Spore transfer via soil debris, wind patterns, and splashing rainwater.</td><td>Apply preventive bio-fungicides or spray Salicylic Acid shields to trigger SAR defenses.</td></tr>
+        <tr><td>Powdery Mildew</td><td>High humidity combined with dry leaf canopy micro-climates.</td><td>Improve continuous line ventilation and apply organic sulfur spray treatments.</td></tr>
+        """
+    elif inf_type.lower() == "virus":
+        rows = """
+        <tr><td>Tomato Spotted Wilt Virus (TSWV)</td><td>Thrips insect vectors piercing vegetative tissue networks.</td><td>Implement vector insect netting protection and remove surrounding symptomatic weed reservoirs.</td></tr>
+        <tr><td>Tobacco Mosaic Virus (TMV)</td><td>Mechanical transmission via contaminated tools, hands, or crop debris.</td><td>Enforce strict tool sanitization using phosphate soap mixtures and plant resistant seed variants.</td></tr>
+        """
+    else: # bacteria
+        rows = """
+        <tr><td>Bacterial Canker (Clavibacter)</td><td>Infected seed stock lines or entry through mechanical pruning wounds.</td><td>Utilize clean certified seeds and apply copper-based organic compounds carefully during early stages.</td></tr>
+        <tr><td>Wildfire Bacterial Spot</td><td>Warm, splashing storms driving microbes directly into stomatal open pores.</td><td>Adopt targeted sub-surface drip irrigation to keep leaf surfaces completely dry.</td></tr>
+        """
+
+    content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head><title>Infection - {title_str}</title>VAR_PREMIUM_CSS</head>
+    <body>
+        <nav class="navbar navbar-dark nav-premium py-3 mb-4 shadow-sm">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold fs-3 text-white" href="/"><i class="bi bi-shield-fill-check me-2"></i>BIOSHIELD PLATFORM TERMINAL</a>
+                VAR_NAV_DROPDOWNS_HTML
+            </div>
+        </nav>
+        <div class="container py-4">
+            <a href="/" class="btn btn-outline-danger btn-sm mb-4">← Back to Dashboard</a>
+            <div class="card-luxury border-start border-4 border-danger">
+                <h2 class="fw-bold text-danger mb-3"><i class="bi bi-bug-fill me-2"></i>{title_str} Analytics Log</h2>
+                <p class="text-white-50">Active agronomic disease tracking table detailing the primary infection vectors, source environments, and effective remediation treatments.</p>
+                
+                <div class="table-responsive my-4">
+                    <table class="table table-striped table-bordered text-white font-monospace small table-kagl">
+                        <thead>
+                            <tr class="table-dark text-danger">
+                                <th>Target Disease Name</th>
+                                <th>Primary Transmission Source Vector</th>
+                                <th>Recommended Remediation &amp; Treatment Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {rows}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    """.replace("VAR_PREMIUM_CSS", PREMIUM_CSS).replace("VAR_NAV_DROPDOWNS_HTML", NAV_DROPDOWNS_HTML)
+    return HTMLResponse(content=content)
+
+# =========================================================================
+# EXISTING ENDPOINTS RETAINED EXACTLY AS REQUESTED
+# =========================================================================
 
 @app.post("/run-chat-query", response_class=HTMLResponse)
 async def run_chat_query_endpoint(user_query: str = Form(...)):
